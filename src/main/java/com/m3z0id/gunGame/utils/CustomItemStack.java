@@ -1,4 +1,4 @@
-package com.m3z0id.gunGame.Utils;
+package com.m3z0id.gunGame.utils;
 
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
