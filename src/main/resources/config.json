@@ -1,0 +1,65 @@
+{
+  "serverPrefix": "&8[&2Server&8] ",
+  "mapChangeInterval": 10,
+  "waterDeathMessage": "&cZemřel jsi",
+  "deathMessage": "&cZabil tě hráč %killerName% &8(&e%level%&8)",
+  "killMessage": "&2Zabil jsi hráče %deadName% &8(&e%level%&8)",
+  "insufficientFundsMessage": "&cNemáš dostatek peněz!",
+  "successfulPurchaseMessage": "&eKoupě byla úspěšná!",
+  "showTop": 5,
+  "worldSpawns": [
+    {
+      "name": "worldName",
+      "spawnX": 10,
+      "spawnY": 20,
+      "spawnZ": 30,
+      "deathlist": "deathlistWorldName",
+      "killlist": "killlistWorldName"
+    },
+    {
+      "name": "anotherWorld",
+      "spawnX": 30,
+      "spawnY": 20,
+      "spawnZ": 10,
+      "deathlist": "deathlistAnotherWorld",
+      "killlist": "killlistAnotherWorld"
+    }
+  ],
+  "shop": {
+    "size": 27,
+    "title": "&cObchod",
+    "items": [
+      {
+        "name": "&cStrength",
+        "cost": 80,
+        "item": "RED_DYE",
+        "slot": 11,
+        "effects": [
+          {
+            "effect": "STRENGTH",
+            "level": 1,
+            "duration": 20
+          }
+        ]
+      },
+      {
+        "name": "&bSpeed &fa &eJump Boost",
+        "cost": 15,
+        "item": "RABBIT_FOOT",
+        "slot": 14,
+        "effects": [
+          {
+            "effect": "SPEED",
+            "level": 1,
+            "duration": 15
+          },
+          {
+            "effect": "JUMP_BOOST",
+            "level": 1,
+            "duration": 15
+          }
+        ]
+      }
+    ]
+  }
+}
