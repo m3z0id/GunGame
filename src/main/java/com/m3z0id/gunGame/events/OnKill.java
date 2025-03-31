@@ -26,9 +26,6 @@ public class OnKill implements Listener {
         Updater.updatePlayer(p.getUniqueId(), GunGame.levels.get(p.getName()));
 
         p.teleport(GunGame.currentWorld.getSpawnLocation());
-        p.getActivePotionEffects().forEach(potionEffect -> {
-            p.removePotionEffect(potionEffect.getType());
-        });
 
         if(p.getKiller() == null) {
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getWaterDeathMessage()));
@@ -49,10 +46,7 @@ public class OnKill implements Listener {
         killer.removePotionEffect(PotionEffectType.SLOW);
         killer.addPotionEffect(PotionEffectType.REGENERATION.createEffect(15, 5));
         GunGame.levels.put(killer.getName(), GunGame.levels.getOrDefault(killer.getName(), 1) + 1);
-        if(GunGame.levels.getOrDefault(killer.getName(), 1) > GunGame.records.getOrDefault(killer.getName(), 1)) {
-            GunGame.records.put(killer.getName(), GunGame.levels.get(killer.getName()));
-            Saver.saveMap(GunGame.records, GunGame.instance.recordsFile);
-        }
+
         Updater.updatePlayer(killer.getUniqueId(), GunGame.levels.get(killer.getName()));
     }
     /*@EventHandler

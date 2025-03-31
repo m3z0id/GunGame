@@ -1,6 +1,7 @@
 package com.m3z0id.gunGame;
 
 import com.m3z0id.gunGame.kit.Kits;
+import com.m3z0id.gunGame.utils.Saver;
 import com.m3z0id.gunGame.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -25,6 +26,11 @@ public class Updater {
         player.getInventory().setItem(0, Kits.KITS.get(Math.min(Kits.KITS.size()-1, level-1)).getWeapon());
 
         player.getInventory().setItem(GunGame.config.getShopInventoryItem().getSlot(), GunGame.config.getShopInventoryItem().getItem());
+
+        if(GunGame.levels.getOrDefault(player.getName(), 1) > GunGame.records.getOrDefault(player.getName(), 1)) {
+            GunGame.records.put(player.getName(), GunGame.levels.getOrDefault(player.getName(), 1));
+            Saver.saveMap(GunGame.records, GunGame.instance.recordsFile);
+        }
 
         if(level >= 55){
             player.addPotionEffect(PotionEffectType.SLOW.createEffect(Integer.MAX_VALUE, 0));
