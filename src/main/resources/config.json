@@ -8,6 +8,12 @@
     "item": "EMERALD",
     "slot": 8
   },
+  "soundOnBuy": {
+    "sound": "ENTITY_GENERIC_DRINK"
+  },
+  "soundOnLevelup": {
+    "sound": "ENTITY_PLAYER_LEVELUP"
+  },
   "shop": {
     "size": 27,
     "title": "&cObchod",

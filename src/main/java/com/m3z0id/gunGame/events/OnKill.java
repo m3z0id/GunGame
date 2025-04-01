@@ -36,6 +36,10 @@ public class OnKill implements Listener {
 
         int killerPrevLevel = GunGame.levels.getOrDefault(p.getName(), 1);
 
+        if(GunGame.config.getSoundOnLevelup() != null){
+            killer.playSound(killer.getLocation(), GunGame.config.getSoundOnLevelup().getSound(), GunGame.config.getSoundOnLevelup().getVolume(), GunGame.config.getSoundOnLevelup().getPitch());
+        }
+
         p.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getDeathMessage().replaceAll("%killerName%", killer.getName()).replaceAll("%level%", String.valueOf(killerPrevLevel))));
         killer.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getKillMessage().replaceAll("%deadName%", p.getName()).replaceAll("%level%", String.valueOf(deadPrevLevel))));
         p.teleport(GunGame.currentWorld.getSpawnLocation());

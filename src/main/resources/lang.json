@@ -8,5 +8,6 @@
   "successMessage": "&aOperace proběhla úspěšně!",
   "insufficientFundsMessage": "&cNemáš dostatek peněz!",
   "successfulPurchaseMessage": "&eKoupě byla úspěšná!",
+  "priceLore": "",
   "invalidSubcommand": "&cŠpatný příkaz!"
 }

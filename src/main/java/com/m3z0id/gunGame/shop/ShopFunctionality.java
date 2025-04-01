@@ -28,6 +28,9 @@ public class ShopFunctionality implements Listener {
 
                 } else {
                     GunGame.instance.economy.withdrawPlayer(player, item.getPrice());
+                    if(GunGame.config.getSoundOnBuy() != null){
+                        player.playSound(player.getLocation(), GunGame.config.getSoundOnBuy().getSound(), GunGame.config.getSoundOnBuy().getVolume(), GunGame.config.getSoundOnBuy().getPitch());
+                    }
                     player.addPotionEffects(item.getEffects());
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessfulPurchaseMessage()));
                     player.closeInventory();

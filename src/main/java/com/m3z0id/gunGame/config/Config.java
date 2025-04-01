@@ -5,10 +5,13 @@ import com.google.gson.GsonBuilder;
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.config.serializers.MaterialSerializer;
 import com.m3z0id.gunGame.config.serializers.PotionEffectTypeSerializer;
+import com.m3z0id.gunGame.config.serializers.SoundSerializer;
 import com.m3z0id.gunGame.config.subclasses.config.Shop;
 import com.m3z0id.gunGame.config.subclasses.config.ShopInventoryItem;
+import com.m3z0id.gunGame.config.subclasses.config.SoundEntry;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.potion.PotionEffectType;
 
 import java.io.*;
@@ -19,6 +22,8 @@ import java.util.Objects;
 public class Config {
     int lossPercentage;
     int mapChangeInterval;
+    SoundEntry soundOnBuy;
+    SoundEntry soundOnLevelup;
     List<String> worlds;
     ShopInventoryItem shopInventoryItem;
     Shop shop;
@@ -38,6 +43,12 @@ public class Config {
     public Shop getShop() {
         return shop;
     }
+    public SoundEntry getSoundOnBuy() {
+        return soundOnBuy;
+    }
+    public SoundEntry getSoundOnLevelup() {
+        return soundOnLevelup;
+    }
 
     public static Config loadConfig() {
         File conf = new File(GunGame.instance.getDataFolder(), "config.json");
@@ -52,6 +63,7 @@ public class Config {
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(PotionEffectType.class, new PotionEffectTypeSerializer())
                 .registerTypeAdapter(Material.class, new MaterialSerializer())
+                .registerTypeAdapter(Sound.class, new SoundSerializer())
                 .create();
 
         try(Reader reader = new FileReader(conf)) {
