@@ -1,0 +1,12 @@
+{
+  "serverPrefix": "&8[&2Server&8] ",
+  "mapChangeInterval": 10,
+  "lossPercentage": 20,
+  "waterDeathMessage": "&cZemřel jsi",
+  "deathMessage": "&cZabil tě hráč %killerName% &8(&e%level%&8)",
+  "killMessage": "&2Zabil jsi hráče %deadName% &8(&e%level%&8)",
+  "successMessage": "&aOperace proběhla úspěšně!",
+  "insufficientFundsMessage": "&cNemáš dostatek peněz!",
+  "successfulPurchaseMessage": "&eKoupě byla úspěšná!",
+  "invalidSubcommand": "&cŠpatný příkaz!"
+}

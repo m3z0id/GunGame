@@ -5,64 +5,26 @@ import com.google.gson.GsonBuilder;
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.config.serializers.MaterialSerializer;
 import com.m3z0id.gunGame.config.serializers.PotionEffectTypeSerializer;
-import com.m3z0id.gunGame.config.subclasses.Shop;
-import com.m3z0id.gunGame.config.subclasses.ShopInventoryItem;
+import com.m3z0id.gunGame.config.subclasses.config.Shop;
+import com.m3z0id.gunGame.config.subclasses.config.ShopInventoryItem;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.potion.PotionEffectType;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.List;
+import java.util.Objects;
 
 public class Config {
-    String serverPrefix;
     int lossPercentage;
     int mapChangeInterval;
-    String waterDeathMessage;
-    String deathMessage;
-    String killMessage;
-    String insufficientFundsMessage;
-    String successfulPurchaseMessage;
-    String priceLore;
-    String invalidSubcommand;
-    String successMessage;
     List<String> worlds;
     ShopInventoryItem shopInventoryItem;
     Shop shop;
 
-    public Config() {
-
-    }
-
-    public String getServerPrefix() {
-        return serverPrefix;
-    }
     public int getMapChangeInterval() {
         return mapChangeInterval;
-    }
-    public String getWaterDeathMessage() {
-        return waterDeathMessage;
-    }
-    public String getDeathMessage() {
-        return deathMessage;
-    }
-    public String getKillMessage() {
-        return killMessage;
-    }
-    public String getInsufficientFundsMessage() {
-        return insufficientFundsMessage;
-    }
-    public String getSuccessfulPurchaseMessage() {
-        return successfulPurchaseMessage;
-    }
-    public String getPriceLore(){
-        return priceLore;
-    }
-    public String getInvalidSubcommand() {
-        return invalidSubcommand;
-    }
-    public String getSuccessMessage() {
-        return successMessage;
     }
     public int getLossPercentage(){
         return lossPercentage;
@@ -79,20 +41,21 @@ public class Config {
 
     public static Config loadConfig() {
         File conf = new File(GunGame.instance.getDataFolder(), "config.json");
+        if(!conf.exists()) {
+            try {
+                Files.copy(Objects.requireNonNull(GunGame.class.getResourceAsStream("/config.json")), conf.toPath());
+            } catch (IOException e) {
+                Bukkit.getLogger().severe("Failed to drop config file.");
+                return null;
+            }
+        }
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(PotionEffectType.class, new PotionEffectTypeSerializer())
                 .registerTypeAdapter(Material.class, new MaterialSerializer())
                 .create();
 
-        try(InputStream inputStream = new FileInputStream(conf)) {
-            StringBuilder stringBuilder = new StringBuilder();
-            try (BufferedReader rd = new BufferedReader(new InputStreamReader(inputStream))) {
-                String line;
-                while ((line = rd.readLine()) != null) {
-                    stringBuilder.append(line).append(System.lineSeparator());
-                }
-            }
-            return gson.fromJson(stringBuilder.toString(), Config.class);
+        try(Reader reader = new FileReader(conf)) {
+            return gson.fromJson(reader, Config.class);
         } catch (IOException e) {
             Bukkit.getLogger().warning("Failed to load config.json and a backup, " + e.getMessage());
             Bukkit.getPluginManager().disablePlugin(GunGame.instance);

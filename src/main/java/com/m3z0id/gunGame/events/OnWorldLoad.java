@@ -16,6 +16,7 @@ public class OnWorldLoad implements Listener {
                 if(GunGame.instance.loadedWorlds == null) GunGame.instance.loadedWorlds = new ArrayList<>();
                 GunGame.instance.loadedWorlds.add(event.getWorld());
                 GunGame.instance.update(GunGame.instance.loadedWorlds);
+                GunGame.currentWorld = event.getWorld();
             }
         }
     }

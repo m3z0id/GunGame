@@ -3,9 +3,8 @@ version: '1.0'
 main: com.m3z0id.gunGame.GunGame
 api-version: '1.17'
 authors: [ M3z0id ]
-depend: [Vault]
+depend: [Vault, Essentials]
 softdepend: [DecentHolograms, PlacehodlerAPI]
-load: STARTUP
 
 commands:
   gungame:

@@ -2,7 +2,7 @@ package com.m3z0id.gunGame.commands;
 
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.Updater;
-import com.m3z0id.gunGame.utils.Saver;
+import com.m3z0id.gunGame.config.Stats;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -22,12 +22,12 @@ public class MainCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         if(args.length < 1){
-            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getInvalidSubcommand()));
+            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
             return true;
         }
         if(args[0].equalsIgnoreCase("stats")){
             if(args.length != 5){
-                commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getInvalidSubcommand()));
+                commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
                 return true;
             }
             OfflinePlayer player = Bukkit.getOfflinePlayer(args[1]);
@@ -36,35 +36,36 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             try {
                 amount = Integer.parseInt(args[3]);
             } catch (NumberFormatException e) {
-                commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getInvalidSubcommand()));
+                commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
                 return true;
             }
+            amount = Math.abs(amount);
             String field = args[4];
 
             if(method.equalsIgnoreCase("add")){
                 if(field.equalsIgnoreCase("kills")){
                     if(GunGame.kills == null) GunGame.kills = new HashMap<>();
                     GunGame.kills.put(player.getName(), GunGame.kills.getOrDefault(player.getName(), 0) + amount);
-                    Saver.saveMap(GunGame.kills, GunGame.instance.killsFile);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessMessage()));
+                    Stats.saveStat(GunGame.instance.killsFile, GunGame.kills);
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("deaths")){
                     if(GunGame.deaths == null) GunGame.deaths = new HashMap<>();
                     GunGame.deaths.put(player.getName(), GunGame.deaths.getOrDefault(player.getName(), 0) + amount);
-                    Saver.saveMap(GunGame.deaths, GunGame.instance.deathFile);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessMessage()));
+                    Stats.saveStat(GunGame.instance.deathFile, GunGame.deaths);
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("levels")){
                     if(GunGame.levels == null) GunGame.levels = new HashMap<>();
                     GunGame.levels.put(player.getName(), GunGame.levels.getOrDefault(player.getName(), 0) + amount);
                     Updater.updatePlayer(player.getUniqueId(), GunGame.levels.getOrDefault(player.getName(), 1));
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessMessage()));
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else {
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getInvalidSubcommand()));
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
                     return true;
                 }
             }
@@ -72,26 +73,26 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 if(field.equalsIgnoreCase("kills")){
                     if(GunGame.kills == null) GunGame.kills = new HashMap<>();
                     GunGame.kills.put(player.getName(), amount);
-                    Saver.saveMap(GunGame.kills, GunGame.instance.killsFile);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessMessage()));
+                    Stats.saveStat(GunGame.instance.killsFile, GunGame.kills);
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("deaths")){
                     if(GunGame.deaths == null) GunGame.deaths = new HashMap<>();
                     GunGame.deaths.put(player.getName(), amount);
-                    Saver.saveMap(GunGame.deaths, GunGame.instance.deathFile);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessMessage()));
+                    Stats.saveStat(GunGame.instance.deathFile, GunGame.deaths);
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("levels")){
                     if(GunGame.levels == null) GunGame.levels = new HashMap<>();
                     GunGame.levels.put(player.getName(), Math.max(1, amount));
                     Updater.updatePlayer(player.getUniqueId(), GunGame.levels.getOrDefault(player.getName(), 1));
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessMessage()));
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else {
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getInvalidSubcommand()));
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
                     return true;
                 }
             }
@@ -99,26 +100,26 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 if(field.equalsIgnoreCase("kills")){
                     if(GunGame.kills == null) GunGame.kills = new HashMap<>();
                     GunGame.kills.put(player.getName(), Math.max(GunGame.kills.getOrDefault(player.getName(), 0) - amount, 0));
-                    Saver.saveMap(GunGame.kills, GunGame.instance.killsFile);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessMessage()));
+                    Stats.saveStat(GunGame.instance.killsFile, GunGame.kills);
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("deaths")){
                     if(GunGame.deaths == null) GunGame.deaths = new HashMap<>();
                     GunGame.deaths.put(player.getName(), Math.max(GunGame.deaths.getOrDefault(player.getName(), 0) - amount, 0));
-                    Saver.saveMap(GunGame.deaths, GunGame.instance.deathFile);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessMessage()));
+                    Stats.saveStat(GunGame.instance.deathFile, GunGame.deaths);
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("levels")){
                     if(GunGame.levels == null) GunGame.levels = new HashMap<>();
                     GunGame.levels.put(player.getName(), Math.max(GunGame.levels.getOrDefault(player.getName(), 1) - amount, 1));
                     Updater.updatePlayer(player.getUniqueId(), GunGame.levels.getOrDefault(player.getName(), 1));
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessMessage()));
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else {
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getInvalidSubcommand()));
+                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
                     return true;
                 }
             }
@@ -133,14 +134,19 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 Updater.updatePlayer(p.getUniqueId(), 1);
             }
 
-            Saver.saveMap(GunGame.deaths, GunGame.instance.deathFile);
-            Saver.saveMap(GunGame.kills, GunGame.instance.killsFile);
-            Saver.saveMap(GunGame.records, GunGame.instance.recordsFile);
+            Stats.saveStat(GunGame.instance.deathFile, GunGame.deaths);
+            Stats.saveStat(GunGame.instance.killsFile, GunGame.kills);
+            Stats.saveStat(GunGame.instance.recordsFile, GunGame.records);
 
-            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessMessage()));
+            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
             return true;
-        } else {
-            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getInvalidSubcommand()));
+        } else if(args[0].equalsIgnoreCase("reload")){
+            GunGame.instance.load();
+            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() +  GunGame.lang.getSuccessMessage()));
+            return true;
+        }
+        else {
+            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
             return true;
         }
         return true;
@@ -155,6 +161,9 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             }
             if("stats".startsWith(args[0])){
                list.add("stats");
+            }
+            if("reload".startsWith(args[0])){
+                list.add("reload");
             }
             return list;
         }
@@ -185,6 +194,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             if("3".startsWith(args[3])){
                 list.add("3");
             }
+            list.add(args[3]);
             return list;
         }
         else if(args.length == 5){

@@ -1,4 +1,4 @@
-package com.m3z0id.gunGame.config.subclasses;
+package com.m3z0id.gunGame.config.subclasses.config;
 
 import org.bukkit.potion.PotionEffectType;
 

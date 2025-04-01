@@ -16,6 +16,14 @@ import java.util.Map;
 
 public class OnJoin implements Listener {
     @EventHandler
+    public void onJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        if(player.getWorld() != GunGame.currentWorld) return;
+        if(event.getPlayer().getGameMode() == GameMode.SPECTATOR || event.getPlayer().getGameMode() == GameMode.CREATIVE) return;
+
+        doStuff(player);
+    }
+    @EventHandler
     public void onJoin(PlayerChangedWorldEvent event) {
         if(event.getPlayer().getWorld() != GunGame.currentWorld) return;
         if(event.getPlayer().getGameMode() == GameMode.SPECTATOR || event.getPlayer().getGameMode() == GameMode.CREATIVE) return;
@@ -33,6 +41,8 @@ public class OnJoin implements Listener {
     }
 
     private void doStuff(Player player) {
+        if(GunGame.records == null) GunGame.records = new HashMap<>();
+        if(GunGame.levels == null) GunGame.levels = new HashMap<>();
         GunGame.levels.put(player.getName(), 1);
         if(GunGame.deaths == null) GunGame.deaths = new HashMap<>();
         GunGame.deaths.putIfAbsent(player.getName(), 0);

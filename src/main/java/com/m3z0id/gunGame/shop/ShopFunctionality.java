@@ -23,13 +23,13 @@ public class ShopFunctionality implements Listener {
         for(CustomItem item : holder.items) {;
             if(currentItem.toString().equals(item.asItemStack().toString())) {
                 if(GunGame.instance.economy.getBalance(player) < item.getPrice()){
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getInsufficientFundsMessage()));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInsufficientFundsMessage()));
                     player.closeInventory();
 
                 } else {
                     GunGame.instance.economy.withdrawPlayer(player, item.getPrice());
                     player.addPotionEffects(item.getEffects());
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.config.getServerPrefix() + GunGame.config.getSuccessfulPurchaseMessage()));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessfulPurchaseMessage()));
                     player.closeInventory();
                 }
                 break;

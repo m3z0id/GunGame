@@ -1,6 +1,0 @@
-name: GunGame
-version: '1.0'
-main: com.m3z0id.gunGame.GunGame
-api-version: '1.17'
-authors: [ M3z0id ]
-softdepend: [DecentHolograms, Vault, PlacehodlerAPI]

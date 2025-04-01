@@ -1,4 +1,4 @@
-package com.m3z0id.gunGame.config.subclasses;
+package com.m3z0id.gunGame.config.subclasses.config;
 
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
