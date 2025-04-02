@@ -4,8 +4,8 @@ import org.bukkit.potion.PotionEffectType;
 
 public class Effect {
     PotionEffectType effect;
-    int level;
-    int duration;
+    Integer level;
+    Integer duration;
 
     public Effect() {
 
@@ -15,9 +15,11 @@ public class Effect {
         return effect;
     }
     public int getLevel() {
-        return level;
+        if(level == null) return 1;
+        return Math.abs(level);
     }
     public int getDuration() {
-        return duration;
+        if(duration == null) return 60;
+        return Math.abs(duration);
     }
 }

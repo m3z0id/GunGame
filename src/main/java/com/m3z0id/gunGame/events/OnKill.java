@@ -32,11 +32,15 @@ public class OnKill implements Listener {
             return;
         }
         Player killer = p.getKiller();
-        if(GunGame.config.getMoneyOnKill() != null){
-            GunGame.instance.economy.depositPlayer(killer, Math.abs(GunGame.config.getMoneyOnKill()));
+        if(GunGame.config.getKillEvent().getMoney() != null){
+            GunGame.instance.economy.depositPlayer(killer, Math.abs(GunGame.config.getKillEvent().getMoney()));
         }
 
-        int killerPrevLevel = GunGame.levels.getOrDefault(p.getName(), 1);
+        GunGame.config.getKillEvent().getEffects().forEach(effect -> {
+            killer.addPotionEffect(effect.getEffect().createEffect(effect.getDuration(), effect.getLevel()));
+        });
+
+        int killerPrevLevel = GunGame.levels.getOrDefault(killer.getName(), 1);
 
         if(GunGame.config.getSoundOnLevelup() != null){
             killer.playSound(killer.getLocation(), GunGame.config.getSoundOnLevelup().getSound(), GunGame.config.getSoundOnLevelup().getVolume(), GunGame.config.getSoundOnLevelup().getPitch());

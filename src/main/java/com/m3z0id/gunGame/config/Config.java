@@ -6,10 +6,7 @@ import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.config.serializers.MaterialSerializer;
 import com.m3z0id.gunGame.config.serializers.PotionEffectTypeSerializer;
 import com.m3z0id.gunGame.config.serializers.SoundSerializer;
-import com.m3z0id.gunGame.config.subclasses.config.Buff;
-import com.m3z0id.gunGame.config.subclasses.config.Shop;
-import com.m3z0id.gunGame.config.subclasses.config.ShopInventoryItem;
-import com.m3z0id.gunGame.config.subclasses.config.SoundEntry;
+import com.m3z0id.gunGame.config.subclasses.config.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -23,7 +20,7 @@ import java.util.Objects;
 public class Config {
     int lossPercentage;
     int mapChangeInterval;
-    Float moneyOnKill;
+    KillEvent killEvent;
     SoundEntry soundOnBuy;
     SoundEntry soundOnLevelup;
     List<String> worlds;
@@ -31,8 +28,8 @@ public class Config {
     Shop shop;
     List<Buff> buffs;
 
-    public Float getMoneyOnKill() {
-        return moneyOnKill;
+    public KillEvent getKillEvent() {
+        return killEvent;
     }
     public int getMapChangeInterval() {
         return mapChangeInterval;

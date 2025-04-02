@@ -14,7 +14,16 @@
   "soundOnLevelup": {
     "sound": "ENTITY_PLAYER_LEVELUP"
   },
-  "moneyOnKill": 5,
+  "onKill": {
+    "money": 5,
+    "effects": [
+      {
+        "effect": "REGENERATION",
+        "level": 7,
+        "duration": 1
+      }
+    ]
+  },
   "buffs": [
     {
       "fromLevel": 55,
@@ -35,7 +44,7 @@
         "effects": [
           {
             "effect": "INCREASE_DAMAGE",
-            "level": 0,
+            "level": 1,
             "duration": 20
           }
         ]
@@ -48,12 +57,12 @@
         "effects": [
           {
             "effect": "SPEED",
-            "level": 0,
+            "level": 1,
             "duration": 15
           },
           {
             "effect": "JUMP",
-            "level": 0,
+            "level": 1,
             "duration": 15
           }
         ]
