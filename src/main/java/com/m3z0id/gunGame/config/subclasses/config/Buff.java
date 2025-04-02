@@ -29,6 +29,6 @@ public class Buff {
         return showParticles;
     }
     public PotionEffect getPotionEffect() {
-        return effect.createEffect(Integer.MAX_VALUE, getAmplifier());
+        return effect.createEffect(Integer.MAX_VALUE, Math.abs(getAmplifier()-1));
     }
 }
