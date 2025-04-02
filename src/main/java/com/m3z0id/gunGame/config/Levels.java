@@ -6,7 +6,7 @@ import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.config.serializers.EnchantmentSerializer;
 import com.m3z0id.gunGame.config.serializers.ItemFlagSerializer;
 import com.m3z0id.gunGame.config.serializers.MaterialSerializer;
-import com.m3z0id.gunGame.config.subclasses.level.LevelEntry;
+import com.m3z0id.gunGame.config.subclasses.LevelEntry;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;

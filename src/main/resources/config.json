@@ -14,24 +14,6 @@
   "soundOnLevelup": {
     "sound": "ENTITY_PLAYER_LEVELUP"
   },
-  "onKill": {
-    "money": 5,
-    "effects": [
-      {
-        "effect": "REGENERATION",
-        "level": 7,
-        "duration": 1
-      }
-    ]
-  },
-  "buffs": [
-    {
-      "fromLevel": 55,
-      "effect": "SLOWNESS",
-      "level": 1,
-      "showParticles": false
-    }
-  ],
   "shop": {
     "size": 27,
     "title": "&cObchod",
@@ -44,7 +26,7 @@
         "effects": [
           {
             "effect": "INCREASE_DAMAGE",
-            "level": 1,
+            "level": 0,
             "duration": 20
           }
         ]
@@ -57,12 +39,12 @@
         "effects": [
           {
             "effect": "SPEED",
-            "level": 1,
+            "level": 0,
             "duration": 15
           },
           {
             "effect": "JUMP",
-            "level": 1,
+            "level": 0,
             "duration": 15
           }
         ]
