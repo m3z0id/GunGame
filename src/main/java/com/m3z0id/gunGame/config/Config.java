@@ -20,7 +20,7 @@ import java.util.Objects;
 public class Config {
     int lossPercentage;
     int mapChangeInterval;
-    KillEvent killEvent;
+    KillEvent onKill;
     SoundEntry soundOnBuy;
     SoundEntry soundOnLevelup;
     List<String> worlds;
@@ -29,7 +29,7 @@ public class Config {
     List<Buff> buffs;
 
     public KillEvent getKillEvent() {
-        return killEvent;
+        return onKill;
     }
     public int getMapChangeInterval() {
         return mapChangeInterval;
