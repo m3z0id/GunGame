@@ -42,7 +42,6 @@ public final class GunGame extends JavaPlugin {
 
     private int worldIndex = 0;
 
-    private BukkitTask waterCheck;
     private BukkitTask worldChanger;
 
     @Override
@@ -55,16 +54,15 @@ public final class GunGame extends JavaPlugin {
             Bukkit.getPluginManager().disablePlugin(this);
         }
 
-        waterCheck = Bukkit.getScheduler().runTaskTimer(this, () -> {
+        Bukkit.getScheduler().runTaskTimer(this, () -> {
             for (Player p : Bukkit.getOnlinePlayers()) {
-                if(!p.getWorld().equals(currentWorld)) continue;
-                if(p.getLocation().getBlock().getType() == Material.WATER){
+                if (!p.getWorld().equals(currentWorld)) continue;
+                if (p.getLocation().getBlock().getType() == Material.WATER) {
                     Bukkit.getPluginManager().callEvent(new PlayerMoveEvent(p, p.getLocation(), p.getLocation()));
                 }
             }
         }, 0, 20);
 
-        //Bukkit.getPluginManager().registerEvents(new OnWorldLoad(), this);
         Bukkit.getPluginManager().registerEvents(new OnJoin(), this);
         Bukkit.getPluginManager().registerEvents(new OnKill(), this);
         Bukkit.getPluginManager().registerEvents(new OnWater(), this);

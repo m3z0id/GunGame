@@ -32,7 +32,9 @@ public class OnKill implements Listener {
             return;
         }
         Player killer = p.getKiller();
-        GunGame.instance.economy.depositPlayer(killer, 1);
+        if(GunGame.config.getMoneyOnKill() != null){
+            GunGame.instance.economy.depositPlayer(killer, Math.abs(GunGame.config.getMoneyOnKill()));
+        }
 
         int killerPrevLevel = GunGame.levels.getOrDefault(p.getName(), 1);
 

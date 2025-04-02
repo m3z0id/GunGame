@@ -14,6 +14,15 @@
   "soundOnLevelup": {
     "sound": "ENTITY_PLAYER_LEVELUP"
   },
+  "moneyOnKill": 5,
+  "buffs": [
+    {
+      "fromLevel": 55,
+      "effect": "SLOWNESS",
+      "level": 1,
+      "showParticles": false
+    }
+  ],
   "shop": {
     "size": 27,
     "title": "&cObchod",

@@ -1,7 +1,5 @@
-package com.m3z0id.gunGame.config.subclasses;
+package com.m3z0id.gunGame.config.subclasses.level;
 
-import com.m3z0id.gunGame.config.subclasses.level.ItemEntry;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
 public class LevelEntry {

@@ -1,17 +1,19 @@
 package com.m3z0id.gunGame;
 
 import com.m3z0id.gunGame.config.Stats;
+import com.m3z0id.gunGame.config.subclasses.config.Buff;
 import com.m3z0id.gunGame.config.subclasses.level.ItemEntry;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.potion.PotionEffectType;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 public class Updater {
     public static void updatePlayer(UUID uuid, int level) {
+        List<Buff> buffs = GunGame.config.getBuffs();
         Player player = Bukkit.getPlayer(uuid);
         if(player == null) {
             return;
@@ -22,7 +24,9 @@ public class Updater {
         if(GunGame.kills == null) GunGame.kills = new HashMap<>();
         if(GunGame.deaths == null) GunGame.deaths = new HashMap<>();
 
-        player.removePotionEffect(PotionEffectType.SLOW);
+        buffs.forEach(buff -> {
+            player.removePotionEffect(buff.getEffect());
+        });
 
         player.getInventory().clear();
         player.setLevel(level);
@@ -46,8 +50,10 @@ public class Updater {
             Stats.saveStat(GunGame.instance.recordsFile, GunGame.records);
         }
 
-        if(level >= 55){
-            player.addPotionEffect(PotionEffectType.SLOW.createEffect(Integer.MAX_VALUE, 0));
-        }
+        buffs.forEach(buff -> {
+            if(level >= buff.getFromLevel() && level <= buff.getToLevel()) {
+                player.addPotionEffect(buff.getPotionEffect().withParticles(buff.getShowParticles()));
+            }
+        });
     }
 }
