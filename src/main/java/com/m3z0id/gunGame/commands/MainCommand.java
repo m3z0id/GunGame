@@ -1,11 +1,9 @@
 package com.m3z0id.gunGame.commands;
 
 import com.m3z0id.gunGame.GunGame;
-import com.m3z0id.gunGame.Updater;
-import com.m3z0id.gunGame.config.Stats;
+import com.m3z0id.gunGame.database.GunGamePlayer;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -30,9 +28,9 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
                 return true;
             }
-            OfflinePlayer player = Bukkit.getOfflinePlayer(args[1]);
+            Player player = (Player) Bukkit.getOfflinePlayer(args[1]);
             String method = args[2];
-            Integer amount;
+            int amount;
             try {
                 amount = Integer.parseInt(args[3]);
             } catch (NumberFormatException e) {
@@ -44,23 +42,17 @@ public class MainCommand implements CommandExecutor, TabCompleter {
 
             if(method.equalsIgnoreCase("add")){
                 if(field.equalsIgnoreCase("kills")){
-                    if(GunGame.kills == null) GunGame.kills = new HashMap<>();
-                    GunGame.kills.put(player.getName(), GunGame.kills.getOrDefault(player.getName(), 0) + amount);
-                    Stats.saveStat(GunGame.instance.killsFile, GunGame.kills);
+                    GunGamePlayer.fromPlayer(player).addKills(amount);
                     commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("deaths")){
-                    if(GunGame.deaths == null) GunGame.deaths = new HashMap<>();
-                    GunGame.deaths.put(player.getName(), GunGame.deaths.getOrDefault(player.getName(), 0) + amount);
-                    Stats.saveStat(GunGame.instance.deathFile, GunGame.deaths);
+                    GunGamePlayer.fromPlayer(player).addDeaths(amount);
                     commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("levels")){
-                    if(GunGame.levels == null) GunGame.levels = new HashMap<>();
-                    GunGame.levels.put(player.getName(), GunGame.levels.getOrDefault(player.getName(), 0) + amount);
-                    Updater.updatePlayer(player.getUniqueId(), GunGame.levels.getOrDefault(player.getName(), 1));
+                    GunGamePlayer.fromPlayer(player).addLevels(amount);
                     commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
@@ -71,50 +63,18 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             }
             if(method.equalsIgnoreCase("set")){
                 if(field.equalsIgnoreCase("kills")){
-                    if(GunGame.kills == null) GunGame.kills = new HashMap<>();
-                    GunGame.kills.put(player.getName(), amount);
-                    Stats.saveStat(GunGame.instance.killsFile, GunGame.kills);
+                    GunGamePlayer.fromPlayer(player).setKills(amount);
                     commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("deaths")){
-                    if(GunGame.deaths == null) GunGame.deaths = new HashMap<>();
-                    GunGame.deaths.put(player.getName(), amount);
-                    Stats.saveStat(GunGame.instance.deathFile, GunGame.deaths);
+                    GunGamePlayer.fromPlayer(player).setDeaths(amount);
                     commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("levels")){
                     if(GunGame.levels == null) GunGame.levels = new HashMap<>();
-                    GunGame.levels.put(player.getName(), Math.max(1, amount));
-                    Updater.updatePlayer(player.getUniqueId(), GunGame.levels.getOrDefault(player.getName(), 1));
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
-                    return true;
-                }
-                else {
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
-                    return true;
-                }
-            }
-            if(method.equalsIgnoreCase("remove")){
-                if(field.equalsIgnoreCase("kills")){
-                    if(GunGame.kills == null) GunGame.kills = new HashMap<>();
-                    GunGame.kills.put(player.getName(), Math.max(GunGame.kills.getOrDefault(player.getName(), 0) - amount, 0));
-                    Stats.saveStat(GunGame.instance.killsFile, GunGame.kills);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
-                    return true;
-                }
-                else if(field.equalsIgnoreCase("deaths")){
-                    if(GunGame.deaths == null) GunGame.deaths = new HashMap<>();
-                    GunGame.deaths.put(player.getName(), Math.max(GunGame.deaths.getOrDefault(player.getName(), 0) - amount, 0));
-                    Stats.saveStat(GunGame.instance.deathFile, GunGame.deaths);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
-                    return true;
-                }
-                else if(field.equalsIgnoreCase("levels")){
-                    if(GunGame.levels == null) GunGame.levels = new HashMap<>();
-                    GunGame.levels.put(player.getName(), Math.max(GunGame.levels.getOrDefault(player.getName(), 1) - amount, 1));
-                    Updater.updatePlayer(player.getUniqueId(), GunGame.levels.getOrDefault(player.getName(), 1));
+                    GunGamePlayer.fromPlayer(player).setLevels(Math.max(amount, 1));
                     commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
@@ -125,18 +85,12 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             }
         }
         else if(args[0].equalsIgnoreCase("reset")){
-            GunGame.records.clear();
-            GunGame.deaths.clear();
-            GunGame.kills.clear();
+            GunGame.database.reset();
             GunGame.levels.clear();
 
             for(Player p : Bukkit.getOnlinePlayers()){
-                Updater.updatePlayer(p.getUniqueId(), 1);
+                GunGamePlayer.fromPlayer(p).setLevels(1);
             }
-
-            Stats.saveStat(GunGame.instance.deathFile, GunGame.deaths);
-            Stats.saveStat(GunGame.instance.killsFile, GunGame.kills);
-            Stats.saveStat(GunGame.instance.recordsFile, GunGame.records);
 
             commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
             return true;
@@ -174,9 +128,6 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             List<String> list = new ArrayList<>();
             if("set".startsWith(args[2])){
                 list.add("set");
-            }
-            if("remove".startsWith(args[2])){
-                list.add("remove");
             }
             if("add".startsWith(args[2])){
                 list.add("add");

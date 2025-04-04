@@ -8,7 +8,7 @@ softdepend: [DecentHolograms, PlacehodlerAPI]
 
 commands:
   gungame:
-    usage: /<command> [reset]/[stats] <player> [set/add/remove] <number> [kills/deaths/levels]
+    usage: /<command> [reset]/[stats] <player> [set/add] <number> [kills/deaths/levels]
     permission: gungame.admin
 
 permissions:

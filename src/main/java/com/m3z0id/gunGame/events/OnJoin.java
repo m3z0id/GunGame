@@ -1,7 +1,7 @@
 package com.m3z0id.gunGame.events;
 
 import com.m3z0id.gunGame.GunGame;
-import com.m3z0id.gunGame.Updater;
+import com.m3z0id.gunGame.database.GunGamePlayer;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -10,51 +10,32 @@ import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 public class OnJoin implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        if(player.getWorld() != GunGame.currentWorld) return;
-        if(event.getPlayer().getGameMode() == GameMode.SPECTATOR || event.getPlayer().getGameMode() == GameMode.CREATIVE) return;
-
-        doStuff(player);
+        add(player);
     }
     @EventHandler
     public void onJoin(PlayerChangedWorldEvent event) {
-        if(event.getPlayer().getWorld() != GunGame.currentWorld) return;
-        if(event.getPlayer().getGameMode() == GameMode.SPECTATOR || event.getPlayer().getGameMode() == GameMode.CREATIVE) return;
-        Player player = event.getPlayer();
-
-        doStuff(player);
+        add(event.getPlayer());
     }
+
     @EventHandler
     public void onSwitchGamemode(PlayerGameModeChangeEvent event){
-        if(event.getPlayer().getWorld() != GunGame.currentWorld) return;
-        if(event.getPlayer().getGameMode() == GameMode.SPECTATOR || event.getPlayer().getGameMode() == GameMode.CREATIVE) return;
-        Player player = event.getPlayer();
-
-        doStuff(player);
+        add(event.getPlayer());
     }
 
-    private void doStuff(Player player) {
-        if(GunGame.records == null) GunGame.records = new HashMap<>();
-        if(GunGame.levels == null) GunGame.levels = new HashMap<>();
-        GunGame.levels.put(player.getName(), 1);
-        if(GunGame.deaths == null) GunGame.deaths = new HashMap<>();
-        GunGame.deaths.putIfAbsent(player.getName(), 0);
-        if(GunGame.kills == null) GunGame.kills = new HashMap<>();
-        GunGame.kills.putIfAbsent(player.getName(), 0);
+    private void add(Player player) {
+        if(player.getWorld() != GunGame.currentWorld) return;
+        if(player.getGameMode() == GameMode.SPECTATOR || player.getGameMode() == GameMode.CREATIVE) return;
 
+        player.getInventory().clear();
         player.setExp(0);
         player.setLevel(0);
-        player.getActivePotionEffects().forEach(potionEffect -> {
-            player.removePotionEffect(potionEffect.getType());
-        });
 
-        Updater.updatePlayer(player.getUniqueId(), GunGame.levels.get(player.getName()));
+        if(GunGame.itemLevels != null && !GunGame.itemLevels.getLevels().isEmpty()) GunGamePlayer.fromPlayer(player).applyKit(GunGame.itemLevels.getLevels().get(0));
+
+        if(!GunGame.database.playerExists(player.getName())) GunGame.database.addPlayer(player.getName());
     }
 }

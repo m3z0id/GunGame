@@ -2,6 +2,7 @@ package com.m3z0id.gunGame;
 
 import com.m3z0id.gunGame.commands.MainCommand;
 import com.m3z0id.gunGame.config.*;
+import com.m3z0id.gunGame.database.Database;
 import com.m3z0id.gunGame.events.*;
 import com.m3z0id.gunGame.papi.deathCountPlayer;
 import com.m3z0id.gunGame.papi.killCountPlayer;
@@ -17,18 +18,10 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
-import java.io.*;
 import java.util.*;
 
 public final class GunGame extends JavaPlugin {
     public static Map<String, Integer> levels = new HashMap<>();
-    public static Map<String, Integer> kills = new HashMap<>();
-    public static Map<String, Integer> deaths = new HashMap<>();
-    public static Map<String, Integer> records = new HashMap<>();
-
-    public File deathFile = new File(getDataFolder(), "deaths.json");
-    public File killsFile = new File(getDataFolder(), "kills.json");
-    public File recordsFile = new File(getDataFolder(), "records.json");
 
     public List<World> loadedWorlds = new ArrayList<>();
 
@@ -37,12 +30,12 @@ public final class GunGame extends JavaPlugin {
     public static Config config;
     public static Levels itemLevels;
     public static Lang lang;
+    public static Database database;
 
     public Economy economy;
 
     private int worldIndex = 0;
 
-    private BukkitTask waterCheck;
     private BukkitTask worldChanger;
 
     @Override
@@ -55,7 +48,7 @@ public final class GunGame extends JavaPlugin {
             Bukkit.getPluginManager().disablePlugin(this);
         }
 
-        waterCheck = Bukkit.getScheduler().runTaskTimer(this, () -> {
+        Bukkit.getScheduler().runTaskTimer(this, () -> {
             for (Player p : Bukkit.getOnlinePlayers()) {
                 if(!p.getWorld().equals(currentWorld)) continue;
                 if(p.getLocation().getBlock().getType() == Material.WATER){
@@ -64,7 +57,6 @@ public final class GunGame extends JavaPlugin {
             }
         }, 0, 20);
 
-        //Bukkit.getPluginManager().registerEvents(new OnWorldLoad(), this);
         Bukkit.getPluginManager().registerEvents(new OnJoin(), this);
         Bukkit.getPluginManager().registerEvents(new OnKill(), this);
         Bukkit.getPluginManager().registerEvents(new OnWater(), this);
@@ -77,9 +69,7 @@ public final class GunGame extends JavaPlugin {
         getCommand("gungame").setTabCompleter(new MainCommand());
     }
     public void load(){
-        deaths = Stats.loadStat(deathFile);
-        kills = Stats.loadStat(killsFile);
-        records = Stats.loadStat(recordsFile);
+        database = Database.get();
         itemLevels = Levels.load();
         config = Config.loadConfig();
         lang = Lang.loadLang();
