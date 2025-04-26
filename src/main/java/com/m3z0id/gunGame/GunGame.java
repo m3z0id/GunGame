@@ -4,9 +4,7 @@ import com.m3z0id.gunGame.commands.MainCommand;
 import com.m3z0id.gunGame.config.*;
 import com.m3z0id.gunGame.database.Database;
 import com.m3z0id.gunGame.events.*;
-import com.m3z0id.gunGame.papi.deathCountPlayer;
-import com.m3z0id.gunGame.papi.killCountPlayer;
-import com.m3z0id.gunGame.papi.level;
+import com.m3z0id.gunGame.papi.*;
 import com.m3z0id.gunGame.shop.ShopFunctionality;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
@@ -89,9 +87,7 @@ public final class GunGame extends JavaPlugin {
         }
 
         if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
-            new deathCountPlayer().register();
-            new killCountPlayer().register();
-            new level().register();
+            new Stats().register();
         }
     }
 

@@ -10,6 +10,8 @@ import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import java.util.HashMap;
+
 public class OnJoin implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
@@ -27,14 +29,20 @@ public class OnJoin implements Listener {
     }
 
     private void add(Player player) {
-        if(player.getWorld() != GunGame.currentWorld) return;
-        if(player.getGameMode() == GameMode.SPECTATOR || player.getGameMode() == GameMode.CREATIVE) return;
+        if(player.getWorld() != GunGame.currentWorld){
+            GunGame.levels.remove(player.getName());
+            return;
+        }
+        // Inverted because Bukkit API is stupid
+        if(player.getGameMode() != GameMode.SPECTATOR || player.getGameMode() != GameMode.CREATIVE){
+            player.getInventory().clear();
+            return;
+        }
 
-        player.getInventory().clear();
-        player.setExp(0);
-        player.setLevel(0);
+        if(GunGame.levels == null) GunGame.levels = new HashMap<>();
 
-        if(GunGame.itemLevels != null && !GunGame.itemLevels.getLevels().isEmpty()) GunGamePlayer.fromPlayer(player).applyKit(GunGame.itemLevels.getLevels().get(0));
+        GunGamePlayer ggplayer = GunGamePlayer.fromPlayer(player);
+        ggplayer.setLevels(1);
 
         if(!GunGame.database.playerExists(player.getName())) GunGame.database.addPlayer(player.getName());
     }

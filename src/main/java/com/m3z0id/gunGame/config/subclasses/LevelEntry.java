@@ -2,6 +2,7 @@ package com.m3z0id.gunGame.config.subclasses;
 
 import com.m3z0id.gunGame.config.subclasses.level.ItemEntry;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 
 public class LevelEntry {

@@ -148,48 +148,46 @@ public class Database {
         setPlayerDeaths(player, getPlayerDeaths(player) + level);
     }
 
-    public Map<Integer, String> getTopNKillers(int n){
+    public String getNthKiller(int n){
         String query = "SELECT player FROM stats ORDER BY killCount DESC LIMIT ?";
-        Map<Integer, String> result = new LinkedHashMap<>();
         try {
-            return getIntegerStringMap(n, query, result);
+            return getQueryValue(n, query);
         } catch (SQLException e) {
             GunGame.instance.getLogger().severe("Could not retrieve top Kills: " + e.getMessage());
             return null;
         }
     }
-    public Map<Integer, String> getTopNDeaths(int n){
+    public String getNthDead(int n){
         String query = "SELECT player FROM stats ORDER BY deathCount DESC LIMIT ?";
-        Map<Integer, String> result = new LinkedHashMap<>();
         try {
-            return getIntegerStringMap(n, query, result);
+            return getQueryValue(n, query);
         } catch (SQLException e) {
             GunGame.instance.getLogger().severe("Could not retrieve top deaths: " + e.getMessage());
             return null;
         }
     }
-    public Map<Integer, String> getTopNHighestLevels(int n){
+    public String getNthHighestLevel(int n){
         String query = "SELECT player FROM stats ORDER BY highestLevel DESC LIMIT ?";
-        Map<Integer, String> result = new LinkedHashMap<>();
         try {
-            return getIntegerStringMap(n, query, result);
+            return getQueryValue(n, query);
         } catch (SQLException e) {
             GunGame.instance.getLogger().severe("Could not retrieve top highest levels: " + e.getMessage());
             return null;
         }
     }
 
-    private Map<Integer, String> getIntegerStringMap(int n, String query, Map<Integer, String> result) throws SQLException {
+    private String getQueryValue(int n, String query) throws SQLException {
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, n);
         ResultSet resultSet = statement.executeQuery();
-        int rank = 0;
+        StringBuilder result = new StringBuilder();
+        int counter = 0;
         while (resultSet.next()) {
-            rank++;
-            if(rank >= n) break;
-            result.put(rank, resultSet.getString("player"));
+            if(counter == n-1) result.append(resultSet.getString("player"));
+            counter++;
         }
-        return result;
+        if(result.isEmpty()) return "Blank";
+        return result.toString();
     }
 
     public void reset(){
