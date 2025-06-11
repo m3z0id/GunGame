@@ -1,5 +1,7 @@
 package com.m3z0id.gunGame.config.subclasses.level;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -16,13 +18,13 @@ public class ItemEntry {
     private List<Enchant> enchants;
     private List<ItemFlag> itemFlags;
 
-    private String getDisplayName() {
+    private Component getDisplayName() {
         if(displayName == null) {
             ItemStack itemStack = new ItemStack(item);
             ItemMeta itemMeta = itemStack.getItemMeta();
-            return itemMeta.getDisplayName();
+            return itemMeta.displayName();
         }
-        return displayName;
+        return LegacyComponentSerializer.legacySection().deserialize(displayName);
     }
     private int getAmount() {
         if(amount == null || amount == 0) return 1;
@@ -45,7 +47,7 @@ public class ItemEntry {
         if(item == null) return null;
         ItemStack itemStack = new ItemStack(item, getAmount());
         ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.setDisplayName(getDisplayName());
+        itemMeta.displayName(getDisplayName());
         if(getEnchants() != null && !getEnchants().isEmpty()) {
             getEnchants().forEach(enchant -> itemMeta.addEnchant(enchant.getEnchantment(), enchant.getLevel(), true));
         }

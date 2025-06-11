@@ -3,7 +3,8 @@ package com.m3z0id.gunGame.shop;
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.config.subclasses.config.Effect;
 import com.m3z0id.gunGame.config.subclasses.config.ShopItem;
-import net.md_5.bungee.api.ChatColor;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
@@ -18,8 +19,8 @@ public class CustomItem extends ItemStack {
     public CustomItem(ShopItem shopItem, int amount) {
         super(shopItem.getItem(), amount);
         ItemMeta meta = this.getItemMeta();
-        meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', shopItem.getName()));
-        meta.setLore(List.of("", ChatColor.translateAlternateColorCodes('&', GunGame.lang.getPriceLore().replaceAll("%price%", String.valueOf(shopItem.getCost())))));
+        meta.displayName(LegacyComponentSerializer.legacySection().deserialize(shopItem.getName()));
+        meta.lore(List.of(Component.newline(), LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getPriceLore().replaceAll("%price%", String.valueOf(shopItem.getCost())))));
         this.setItemMeta(meta);
         for(Effect effect : shopItem.getEffects()) {
             effects.add(effect.getEffect().createEffect(effect.getDuration()*20, effect.getLevel()));

@@ -1,5 +1,6 @@
 package com.m3z0id.gunGame.config.subclasses.config;
 
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -13,7 +14,7 @@ public class ShopInventoryItem {
     public ItemStack getItem() {
         ItemStack item = new ItemStack(this.item);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', this.name));
+        meta.displayName(LegacyComponentSerializer.legacySection().deserialize(this.name));
         item.setItemMeta(meta);
         return item;
     }

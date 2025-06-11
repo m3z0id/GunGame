@@ -1,18 +1,14 @@
 package com.m3z0id.gunGame.papi;
 
 import com.m3z0id.gunGame.GunGame;
-import com.m3z0id.gunGame.database.GunGamePlayer;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class Stats extends PlaceholderExpansion {
     @Override

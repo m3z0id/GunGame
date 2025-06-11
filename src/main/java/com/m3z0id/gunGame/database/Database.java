@@ -4,8 +4,6 @@ import com.m3z0id.gunGame.GunGame;
 
 import java.io.File;
 import java.sql.*;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class Database {
     private Connection connection;

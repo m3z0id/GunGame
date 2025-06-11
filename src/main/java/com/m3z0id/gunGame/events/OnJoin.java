@@ -2,7 +2,6 @@ package com.m3z0id.gunGame.events;
 
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.database.GunGamePlayer;
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -31,11 +30,6 @@ public class OnJoin implements Listener {
     private void add(Player player) {
         if(player.getWorld() != GunGame.currentWorld){
             GunGame.levels.remove(player.getName());
-            return;
-        }
-        // Inverted because Bukkit API is stupid
-        if(player.getGameMode() != GameMode.SPECTATOR || player.getGameMode() != GameMode.CREATIVE){
-            player.getInventory().clear();
             return;
         }
 

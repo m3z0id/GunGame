@@ -2,7 +2,7 @@ package com.m3z0id.gunGame.commands;
 
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.database.GunGamePlayer;
-import net.md_5.bungee.api.ChatColor;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,12 +20,12 @@ public class MainCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         if(args.length < 1){
-            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
+            commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
             return true;
         }
         if(args[0].equalsIgnoreCase("stats")){
             if(args.length != 5){
-                commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
+                commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
                 return true;
             }
             Player player = (Player) Bukkit.getOfflinePlayer(args[1]);
@@ -34,7 +34,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             try {
                 amount = Integer.parseInt(args[3]);
             } catch (NumberFormatException e) {
-                commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
+                commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
                 return true;
             }
             amount = Math.abs(amount);
@@ -43,43 +43,43 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             if(method.equalsIgnoreCase("add")){
                 if(field.equalsIgnoreCase("kills")){
                     GunGamePlayer.fromPlayer(player).addKills(amount);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
+                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("deaths")){
                     GunGamePlayer.fromPlayer(player).addDeaths(amount);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
+                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("levels")){
                     GunGamePlayer.fromPlayer(player).addLevels(amount);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
+                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else {
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
+                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
                     return true;
                 }
             }
             if(method.equalsIgnoreCase("set")){
                 if(field.equalsIgnoreCase("kills")){
                     GunGamePlayer.fromPlayer(player).setKills(amount);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
+                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("deaths")){
                     GunGamePlayer.fromPlayer(player).setDeaths(amount);
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
+                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else if(field.equalsIgnoreCase("levels")){
                     if(GunGame.levels == null) GunGame.levels = new HashMap<>();
                     GunGamePlayer.fromPlayer(player).setLevels(Math.max(amount, 1));
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
+                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
                     return true;
                 }
                 else {
-                    commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
+                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
                     return true;
                 }
             }
@@ -92,15 +92,15 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 GunGamePlayer.fromPlayer(p).setLevels(1);
             }
 
-            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
+            commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
             return true;
         } else if(args[0].equalsIgnoreCase("reload")){
             GunGame.instance.load();
-            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() +  GunGame.lang.getSuccessMessage()));
+            commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() +  GunGame.lang.getSuccessMessage()));
             return true;
         }
         else {
-            commandSender.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
+            commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
             return true;
         }
         return true;

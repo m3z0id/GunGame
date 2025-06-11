@@ -2,7 +2,7 @@ package com.m3z0id.gunGame.events;
 
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.database.GunGamePlayer;
-import net.md_5.bungee.api.ChatColor;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,7 +22,7 @@ public class OnKill implements Listener {
         p.teleport(GunGame.currentWorld.getSpawnLocation());
 
         if(p.getKiller() == null) {
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getWaterDeathMessage()));
+            p.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getWaterDeathMessage()));
             return;
         }
 
@@ -35,8 +35,8 @@ public class OnKill implements Listener {
             killer.playSound(killer.getLocation(), GunGame.config.getSoundOnLevelup().getSound(), GunGame.config.getSoundOnLevelup().getVolume(), GunGame.config.getSoundOnLevelup().getPitch());
         }
 
-        p.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getDeathMessage().replaceAll("%killerName%", killer.getName()).replaceAll("%level%", String.valueOf(killerPrevLevel))));
-        killer.sendMessage(ChatColor.translateAlternateColorCodes('&', GunGame.lang.getServerPrefix() + GunGame.lang.getKillMessage().replaceAll("%deadName%", p.getName()).replaceAll("%level%", String.valueOf(deadPrevLevel))));
+        p.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getDeathMessage().replaceAll("%killerName%", killer.getName()).replaceAll("%level%", String.valueOf(killerPrevLevel))));
+        killer.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getKillMessage().replaceAll("%deadName%", p.getName()).replaceAll("%level%", String.valueOf(deadPrevLevel))));
 
         p.teleport(GunGame.currentWorld.getSpawnLocation());
         p.getActivePotionEffects().forEach(potionEffect -> {
