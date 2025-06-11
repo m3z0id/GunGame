@@ -1,7 +1,7 @@
 name: GunGame
-version: '1.0'
+version: '1.0.1'
 main: com.m3z0id.gunGame.GunGame
-api-version: '1.17'
+api-version: '1.18.2'
 authors: [ M3z0id ]
 depend: [Vault, Essentials, PlacehodlerAPI]
 

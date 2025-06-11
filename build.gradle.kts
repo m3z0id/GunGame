@@ -3,8 +3,8 @@ plugins {
 }
 
 group = "com.m3z0id.gunGame"
-version = "1.0"
-description = "A plugin that allows you to play custom music on your server"
+version = "1.0.1"
+description = "A GunGame minigame plugin for Paper 1.18.2+"
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(17)
