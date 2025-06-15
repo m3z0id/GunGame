@@ -2,79 +2,79 @@
   "levels": [
     {
       "weapon": {
-        "item": "WOODEN_AXE"
+        "item": "wooden_axe"
       }
     },
     {
       "weapon": {
-        "item": "WOODEN_SWORD"
+        "item": "wooden_sword"
       }
     },
     {
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE"
+        "item": "leather_chestplate"
       },
       "weapon": {
-        "item": "WOODEN_SWORD"
+        "item": "wooden_sword"
       }
     },
     {
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE"
+        "item": "leather_chestplate"
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS"
+        "item": "leather_leggings"
       },
       "weapon": {
-        "item": "WOODEN_SWORD"
+        "item": "wooden_sword"
       }
     },
     {
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE"
+        "item": "leather_chestplate"
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS"
+        "item": "leather_leggings"
       },
       "boots": {
-        "item": "LEATHER_BOOTS"
+        "item": "leather_boots"
       },
       "weapon": {
-        "item": "WOODEN_SWORD"
+        "item": "wooden_sword"
       }
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET"
+        "item": "leather_helmet"
       },
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE"
+        "item": "leather_chestplate"
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS"
+        "item": "leather_leggings"
       },
       "boots": {
-        "item": "LEATHER_BOOTS"
+        "item": "leather_boots"
       },
       "weapon": {
-        "item": "WOODEN_SWORD"
+        "item": "wooden_sword"
       }
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET"
+        "item": "leather_helmet"
       },
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE"
+        "item": "leather_chestplate"
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS"
+        "item": "leather_leggings"
       },
       "boots": {
-        "item": "LEATHER_BOOTS"
+        "item": "leather_boots"
       },
       "weapon": {
-        "item": "WOODEN_AXE",
+        "item": "wooden_axe",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -84,19 +84,19 @@
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET"
+        "item": "leather_helmet"
       },
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE"
+        "item": "leather_chestplate"
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS"
+        "item": "leather_leggings"
       },
       "boots": {
-        "item": "LEATHER_BOOTS"
+        "item": "leather_boots"
       },
       "weapon": {
-        "item": "WOODEN_SWORD",
+        "item": "wooden_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -106,10 +106,10 @@
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET"
+        "item": "leather_helmet"
       },
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE",
+        "item": "leather_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -117,13 +117,13 @@
         ]
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS"
+        "item": "leather_leggings"
       },
       "boots": {
-        "item": "LEATHER_BOOTS"
+        "item": "leather_boots"
       },
       "weapon": {
-        "item": "WOODEN_SWORD",
+        "item": "wooden_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -133,10 +133,10 @@
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET"
+        "item": "leather_helmet"
       },
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE",
+        "item": "leather_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -144,7 +144,7 @@
         ]
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS",
+        "item": "leather_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -152,10 +152,10 @@
         ]
       },
       "boots": {
-        "item": "LEATHER_BOOTS"
+        "item": "leather_boots"
       },
       "weapon": {
-        "item": "WOODEN_SWORD",
+        "item": "wooden_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -165,10 +165,10 @@
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET"
+        "item": "leather_helmet"
       },
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE",
+        "item": "leather_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -176,7 +176,7 @@
         ]
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS",
+        "item": "leather_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -184,7 +184,7 @@
         ]
       },
       "boots": {
-        "item": "LEATHER_BOOTS",
+        "item": "leather_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -192,7 +192,7 @@
         ]
       },
       "weapon": {
-        "item": "WOODEN_SWORD",
+        "item": "wooden_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -202,7 +202,7 @@
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET",
+        "item": "leather_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -210,7 +210,7 @@
         ]
       },
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE",
+        "item": "leather_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -218,7 +218,7 @@
         ]
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS",
+        "item": "leather_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -226,7 +226,7 @@
         ]
       },
       "boots": {
-        "item": "LEATHER_BOOTS",
+        "item": "leather_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -234,7 +234,7 @@
         ]
       },
       "weapon": {
-        "item": "WOODEN_SWORD",
+        "item": "wooden_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -244,7 +244,7 @@
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET",
+        "item": "leather_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -252,7 +252,7 @@
         ]
       },
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE",
+        "item": "leather_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -260,7 +260,7 @@
         ]
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS",
+        "item": "leather_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -268,7 +268,7 @@
         ]
       },
       "boots": {
-        "item": "LEATHER_BOOTS",
+        "item": "leather_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -276,12 +276,12 @@
         ]
       },
       "weapon": {
-        "item": "GOLDEN_AXE"
+        "item": "golden_axe"
       }
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET",
+        "item": "leather_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -289,7 +289,7 @@
         ]
       },
       "chestplate": {
-        "item": "LEATHER_CHESTPLATE",
+        "item": "leather_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -297,7 +297,7 @@
         ]
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS",
+        "item": "leather_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -305,7 +305,7 @@
         ]
       },
       "boots": {
-        "item": "LEATHER_BOOTS",
+        "item": "leather_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -313,12 +313,12 @@
         ]
       },
       "weapon": {
-        "item": "GOLDEN_SWORD"
+        "item": "golden_sword"
       }
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET",
+        "item": "leather_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -326,10 +326,10 @@
         ]
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE"
+        "item": "golden_chestplate"
       },
       "leggings": {
-        "item": "LEATHER_LEGGINGS",
+        "item": "leather_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -337,7 +337,7 @@
         ]
       },
       "boots": {
-        "item": "LEATHER_BOOTS",
+        "item": "leather_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -345,12 +345,12 @@
         ]
       },
       "weapon": {
-        "item": "GOLDEN_SWORD"
+        "item": "golden_sword"
       }
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET",
+        "item": "leather_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -358,13 +358,13 @@
         ]
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE"
+        "item": "golden_chestplate"
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS"
+        "item": "golden_leggings"
       },
       "boots": {
-        "item": "LEATHER_BOOTS",
+        "item": "leather_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -372,12 +372,12 @@
         ]
       },
       "weapon": {
-        "item": "GOLDEN_SWORD"
+        "item": "golden_sword"
       }
     },
     {
       "helmet": {
-        "item": "LEATHER_HELMET",
+        "item": "leather_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -385,50 +385,50 @@
         ]
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE"
+        "item": "golden_chestplate"
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS"
+        "item": "golden_leggings"
       },
       "boots": {
-        "item": "GOLDEN_BOOTS"
+        "item": "golden_boots"
       },
       "weapon": {
-        "item": "GOLDEN_SWORD"
+        "item": "golden_sword"
       }
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET"
+        "item": "golden_helmet"
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE"
+        "item": "golden_chestplate"
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS"
+        "item": "golden_leggings"
       },
       "boots": {
-        "item": "GOLDEN_BOOTS"
+        "item": "golden_boots"
       },
       "weapon": {
-        "item": "GOLDEN_SWORD"
+        "item": "golden_sword"
       }
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET"
+        "item": "golden_helmet"
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE"
+        "item": "golden_chestplate"
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS"
+        "item": "golden_leggings"
       },
       "boots": {
-        "item": "GOLDEN_BOOTS"
+        "item": "golden_boots"
       },
       "weapon": {
-        "item": "GOLDEN_AXE",
+        "item": "golden_axe",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -438,19 +438,19 @@
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET"
+        "item": "golden_helmet"
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE"
+        "item": "golden_chestplate"
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS"
+        "item": "golden_leggings"
       },
       "boots": {
-        "item": "GOLDEN_BOOTS"
+        "item": "golden_boots"
       },
       "weapon": {
-        "item": "GOLDEN_SWORD",
+        "item": "golden_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -460,10 +460,10 @@
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET"
+        "item": "golden_helmet"
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE",
+        "item": "golden_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -471,13 +471,13 @@
         ]
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS"
+        "item": "golden_leggings"
       },
       "boots": {
-        "item": "GOLDEN_BOOTS"
+        "item": "golden_boots"
       },
       "weapon": {
-        "item": "GOLDEN_SWORD",
+        "item": "golden_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -487,10 +487,10 @@
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET"
+        "item": "golden_helmet"
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE",
+        "item": "golden_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -498,7 +498,7 @@
         ]
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS",
+        "item": "golden_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -506,10 +506,10 @@
         ]
       },
       "boots": {
-        "item": "GOLDEN_BOOTS"
+        "item": "golden_boots"
       },
       "weapon": {
-        "item": "GOLDEN_SWORD",
+        "item": "golden_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -519,10 +519,10 @@
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET"
+        "item": "golden_helmet"
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE",
+        "item": "golden_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -530,7 +530,7 @@
         ]
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS",
+        "item": "golden_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -538,7 +538,7 @@
         ]
       },
       "boots": {
-        "item": "GOLDEN_BOOTS",
+        "item": "golden_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -546,7 +546,7 @@
         ]
       },
       "weapon": {
-        "item": "GOLDEN_SWORD",
+        "item": "golden_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -556,7 +556,7 @@
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET",
+        "item": "golden_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -564,7 +564,7 @@
         ]
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE",
+        "item": "golden_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -572,7 +572,7 @@
         ]
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS",
+        "item": "golden_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -580,7 +580,7 @@
         ]
       },
       "boots": {
-        "item": "GOLDEN_BOOTS",
+        "item": "golden_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -588,7 +588,7 @@
         ]
       },
       "weapon": {
-        "item": "GOLDEN_SWORD",
+        "item": "golden_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -598,7 +598,7 @@
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET",
+        "item": "golden_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -606,7 +606,7 @@
         ]
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE",
+        "item": "golden_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -614,7 +614,7 @@
         ]
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS",
+        "item": "golden_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -622,7 +622,7 @@
         ]
       },
       "boots": {
-        "item": "GOLDEN_BOOTS",
+        "item": "golden_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -630,12 +630,12 @@
         ]
       },
       "weapon": {
-        "item": "STONE_AXE"
+        "item": "stone_axe"
       }
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET",
+        "item": "golden_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -643,7 +643,7 @@
         ]
       },
       "chestplate": {
-        "item": "GOLDEN_CHESTPLATE",
+        "item": "golden_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -651,7 +651,7 @@
         ]
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS",
+        "item": "golden_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -659,7 +659,7 @@
         ]
       },
       "boots": {
-        "item": "GOLDEN_BOOTS",
+        "item": "golden_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -667,12 +667,12 @@
         ]
       },
       "weapon": {
-        "item": "STONE_SWORD"
+        "item": "stone_sword"
       }
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET",
+        "item": "golden_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -680,10 +680,10 @@
         ]
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE"
+        "item": "chainmail_chestplate"
       },
       "leggings": {
-        "item": "GOLDEN_LEGGINGS",
+        "item": "golden_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -691,7 +691,7 @@
         ]
       },
       "boots": {
-        "item": "GOLDEN_BOOTS",
+        "item": "golden_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -699,12 +699,12 @@
         ]
       },
       "weapon": {
-        "item": "STONE_SWORD"
+        "item": "stone_sword"
       }
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET",
+        "item": "golden_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -712,13 +712,13 @@
         ]
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE"
+        "item": "chainmail_chestplate"
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS"
+        "item": "chainmail_leggings"
       },
       "boots": {
-        "item": "GOLDEN_BOOTS",
+        "item": "golden_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -726,12 +726,12 @@
         ]
       },
       "weapon": {
-        "item": "STONE_SWORD"
+        "item": "stone_sword"
       }
     },
     {
       "helmet": {
-        "item": "GOLDEN_HELMET",
+        "item": "golden_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -739,50 +739,50 @@
         ]
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE"
+        "item": "chainmail_chestplate"
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS"
+        "item": "chainmail_leggings"
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS"
+        "item": "chainmail_boots"
       },
       "weapon": {
-        "item": "STONE_SWORD"
+        "item": "stone_sword"
       }
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET"
+        "item": "chainmail_helmet"
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE"
+        "item": "chainmail_chestplate"
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS"
+        "item": "chainmail_leggings"
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS"
+        "item": "chainmail_boots"
       },
       "weapon": {
-        "item": "STONE_SWORD"
+        "item": "stone_sword"
       }
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET"
+        "item": "chainmail_helmet"
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE"
+        "item": "chainmail_chestplate"
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS"
+        "item": "chainmail_leggings"
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS"
+        "item": "chainmail_boots"
       },
       "weapon": {
-        "item": "STONE_SWORD",
+        "item": "stone_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -792,10 +792,10 @@
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET"
+        "item": "chainmail_helmet"
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE",
+        "item": "chainmail_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -803,13 +803,13 @@
         ]
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS"
+        "item": "chainmail_leggings"
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS"
+        "item": "chainmail_boots"
       },
       "weapon": {
-        "item": "STONE_SWORD",
+        "item": "stone_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -819,10 +819,10 @@
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET"
+        "item": "chainmail_helmet"
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE",
+        "item": "chainmail_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -830,7 +830,7 @@
         ]
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS",
+        "item": "chainmail_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -838,10 +838,10 @@
         ]
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS"
+        "item": "chainmail_boots"
       },
       "weapon": {
-        "item": "STONE_SWORD",
+        "item": "stone_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -851,10 +851,10 @@
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET"
+        "item": "chainmail_helmet"
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE",
+        "item": "chainmail_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -862,7 +862,7 @@
         ]
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS",
+        "item": "chainmail_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -870,7 +870,7 @@
         ]
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS",
+        "item": "chainmail_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -878,7 +878,7 @@
         ]
       },
       "weapon": {
-        "item": "STONE_SWORD",
+        "item": "stone_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -888,7 +888,7 @@
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET",
+        "item": "chainmail_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -896,7 +896,7 @@
         ]
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE",
+        "item": "chainmail_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -904,7 +904,7 @@
         ]
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS",
+        "item": "chainmail_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -912,7 +912,7 @@
         ]
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS",
+        "item": "chainmail_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -920,7 +920,7 @@
         ]
       },
       "weapon": {
-        "item": "STONE_SWORD",
+        "item": "stone_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -930,7 +930,7 @@
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET",
+        "item": "chainmail_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -938,7 +938,7 @@
         ]
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE",
+        "item": "chainmail_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -946,7 +946,7 @@
         ]
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS",
+        "item": "chainmail_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -954,7 +954,7 @@
         ]
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS",
+        "item": "chainmail_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -962,12 +962,12 @@
         ]
       },
       "weapon": {
-        "item": "IRON_AXE"
+        "item": "iron_axe"
       }
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET",
+        "item": "chainmail_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -975,7 +975,7 @@
         ]
       },
       "chestplate": {
-        "item": "CHAINMAIL_CHESTPLATE",
+        "item": "chainmail_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -983,7 +983,7 @@
         ]
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS",
+        "item": "chainmail_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -991,7 +991,7 @@
         ]
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS",
+        "item": "chainmail_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -999,12 +999,12 @@
         ]
       },
       "weapon": {
-        "item": "IRON_SWORD"
+        "item": "iron_sword"
       }
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET",
+        "item": "chainmail_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1012,10 +1012,10 @@
         ]
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE"
+        "item": "iron_chestplate"
       },
       "leggings": {
-        "item": "CHAINMAIL_LEGGINGS",
+        "item": "chainmail_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1023,7 +1023,7 @@
         ]
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS",
+        "item": "chainmail_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1031,12 +1031,12 @@
         ]
       },
       "weapon": {
-        "item": "IRON_SWORD"
+        "item": "iron_sword"
       }
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET",
+        "item": "chainmail_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1044,13 +1044,13 @@
         ]
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE"
+        "item": "iron_chestplate"
       },
       "leggings": {
-        "item": "IRON_LEGGINGS"
+        "item": "iron_leggings"
       },
       "boots": {
-        "item": "CHAINMAIL_BOOTS",
+        "item": "chainmail_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1058,12 +1058,12 @@
         ]
       },
       "weapon": {
-        "item": "IRON_SWORD"
+        "item": "iron_sword"
       }
     },
     {
       "helmet": {
-        "item": "CHAINMAIL_HELMET",
+        "item": "chainmail_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1071,50 +1071,50 @@
         ]
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE"
+        "item": "iron_chestplate"
       },
       "leggings": {
-        "item": "IRON_LEGGINGS"
+        "item": "iron_leggings"
       },
       "boots": {
-        "item": "IRON_BOOTS"
+        "item": "iron_boots"
       },
       "weapon": {
-        "item": "IRON_SWORD"
+        "item": "iron_sword"
       }
     },
     {
       "helmet": {
-        "item": "IRON_HELMET"
+        "item": "iron_helmet"
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE"
+        "item": "iron_chestplate"
       },
       "leggings": {
-        "item": "IRON_LEGGINGS"
+        "item": "iron_leggings"
       },
       "boots": {
-        "item": "IRON_BOOTS"
+        "item": "iron_boots"
       },
       "weapon": {
-        "item": "IRON_SWORD"
+        "item": "iron_sword"
       }
     },
     {
       "helmet": {
-        "item": "IRON_HELMET"
+        "item": "iron_helmet"
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE"
+        "item": "iron_chestplate"
       },
       "leggings": {
-        "item": "IRON_LEGGINGS"
+        "item": "iron_leggings"
       },
       "boots": {
-        "item": "IRON_BOOTS"
+        "item": "iron_boots"
       },
       "weapon": {
-        "item": "IRON_AXE",
+        "item": "iron_axe",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1124,19 +1124,19 @@
     },
     {
       "helmet": {
-        "item": "IRON_HELMET"
+        "item": "iron_helmet"
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE"
+        "item": "iron_chestplate"
       },
       "leggings": {
-        "item": "IRON_LEGGINGS"
+        "item": "iron_leggings"
       },
       "boots": {
-        "item": "IRON_BOOTS"
+        "item": "iron_boots"
       },
       "weapon": {
-        "item": "IRON_SWORD",
+        "item": "iron_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1146,10 +1146,10 @@
     },
     {
       "helmet": {
-        "item": "IRON_HELMET"
+        "item": "iron_helmet"
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE",
+        "item": "iron_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1157,13 +1157,13 @@
         ]
       },
       "leggings": {
-        "item": "IRON_LEGGINGS"
+        "item": "iron_leggings"
       },
       "boots": {
-        "item": "IRON_BOOTS"
+        "item": "iron_boots"
       },
       "weapon": {
-        "item": "IRON_SWORD",
+        "item": "iron_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1173,10 +1173,10 @@
     },
     {
       "helmet": {
-        "item": "IRON_HELMET"
+        "item": "iron_helmet"
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE",
+        "item": "iron_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1184,7 +1184,7 @@
         ]
       },
       "leggings": {
-        "item": "IRON_LEGGINGS",
+        "item": "iron_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1192,10 +1192,10 @@
         ]
       },
       "boots": {
-        "item": "IRON_BOOTS"
+        "item": "iron_boots"
       },
       "weapon": {
-        "item": "IRON_SWORD",
+        "item": "iron_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1205,10 +1205,10 @@
     },
     {
       "helmet": {
-        "item": "IRON_HELMET"
+        "item": "iron_helmet"
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE",
+        "item": "iron_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1216,7 +1216,7 @@
         ]
       },
       "leggings": {
-        "item": "IRON_LEGGINGS",
+        "item": "iron_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1224,7 +1224,7 @@
         ]
       },
       "boots": {
-        "item": "IRON_BOOTS",
+        "item": "iron_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1232,7 +1232,7 @@
         ]
       },
       "weapon": {
-        "item": "IRON_SWORD",
+        "item": "iron_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1242,7 +1242,7 @@
     },
     {
       "helmet": {
-        "item": "IRON_HELMET",
+        "item": "iron_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1250,7 +1250,7 @@
         ]
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE",
+        "item": "iron_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1258,7 +1258,7 @@
         ]
       },
       "leggings": {
-        "item": "IRON_LEGGINGS",
+        "item": "iron_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1266,7 +1266,7 @@
         ]
       },
       "boots": {
-        "item": "IRON_BOOTS",
+        "item": "iron_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1274,7 +1274,7 @@
         ]
       },
       "weapon": {
-        "item": "IRON_SWORD",
+        "item": "iron_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1284,7 +1284,7 @@
     },
     {
       "helmet": {
-        "item": "IRON_HELMET",
+        "item": "iron_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1292,7 +1292,7 @@
         ]
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE",
+        "item": "iron_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1300,7 +1300,7 @@
         ]
       },
       "leggings": {
-        "item": "IRON_LEGGINGS",
+        "item": "iron_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1308,7 +1308,7 @@
         ]
       },
       "boots": {
-        "item": "IRON_BOOTS",
+        "item": "iron_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1316,12 +1316,12 @@
         ]
       },
       "weapon": {
-        "item": "DIAMOND_AXE"
+        "item": "diamond_axe"
       }
     },
     {
       "helmet": {
-        "item": "IRON_HELMET",
+        "item": "iron_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1329,7 +1329,7 @@
         ]
       },
       "chestplate": {
-        "item": "IRON_CHESTPLATE",
+        "item": "iron_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1337,7 +1337,7 @@
         ]
       },
       "leggings": {
-        "item": "IRON_LEGGINGS",
+        "item": "iron_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1345,7 +1345,7 @@
         ]
       },
       "boots": {
-        "item": "IRON_BOOTS",
+        "item": "iron_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1353,12 +1353,12 @@
         ]
       },
       "weapon": {
-        "item": "DIAMOND_SWORD"
+        "item": "diamond_sword"
       }
     },
     {
       "helmet": {
-        "item": "IRON_HELMET",
+        "item": "iron_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1366,10 +1366,10 @@
         ]
       },
       "chestplate": {
-        "item": "DIAMOND_CHESTPLATE"
+        "item": "diamond_chestplate"
       },
       "leggings": {
-        "item": "IRON_LEGGINGS",
+        "item": "iron_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1377,7 +1377,7 @@
         ]
       },
       "boots": {
-        "item": "IRON_BOOTS",
+        "item": "iron_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1385,12 +1385,12 @@
         ]
       },
       "weapon": {
-        "item": "DIAMOND_SWORD"
+        "item": "diamond_sword"
       }
     },
     {
       "helmet": {
-        "item": "IRON_HELMET",
+        "item": "iron_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1398,13 +1398,13 @@
         ]
       },
       "chestplate": {
-        "item": "DIAMOND_CHESTPLATE"
+        "item": "diamond_chestplate"
       },
       "leggings": {
-        "item": "DIAMOND_LEGGINGS"
+        "item": "diamond_leggings"
       },
       "boots": {
-        "item": "IRON_BOOTS",
+        "item": "iron_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1412,12 +1412,12 @@
         ]
       },
       "weapon": {
-        "item": "DIAMOND_SWORD"
+        "item": "diamond_sword"
       }
     },
     {
       "helmet": {
-        "item": "IRON_HELMET",
+        "item": "iron_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1425,50 +1425,50 @@
         ]
       },
       "chestplate": {
-        "item": "DIAMOND_CHESTPLATE"
+        "item": "diamond_chestplate"
       },
       "leggings": {
-        "item": "DIAMOND_LEGGINGS"
+        "item": "diamond_leggings"
       },
       "boots": {
-        "item": "DIAMOND_BOOTS"
+        "item": "diamond_boots"
       },
       "weapon": {
-        "item": "DIAMOND_SWORD"
+        "item": "diamond_sword"
       }
     },
     {
       "helmet": {
-        "item": "DIAMOND_HELMET"
+        "item": "diamond_helmet"
       },
       "chestplate": {
-        "item": "DIAMOND_CHESTPLATE"
+        "item": "diamond_chestplate"
       },
       "leggings": {
-        "item": "DIAMOND_LEGGINGS"
+        "item": "diamond_leggings"
       },
       "boots": {
-        "item": "DIAMOND_BOOTS"
+        "item": "diamond_boots"
       },
       "weapon": {
-        "item": "DIAMOND_SWORD"
+        "item": "diamond_sword"
       }
     },
     {
       "helmet": {
-        "item": "DIAMOND_HELMET"
+        "item": "diamond_helmet"
       },
       "chestplate": {
-        "item": "DIAMOND_CHESTPLATE"
+        "item": "diamond_chestplate"
       },
       "leggings": {
-        "item": "DIAMOND_LEGGINGS"
+        "item": "diamond_leggings"
       },
       "boots": {
-        "item": "DIAMOND_BOOTS"
+        "item": "diamond_boots"
       },
       "weapon": {
-        "item": "DIAMOND_AXE",
+        "item": "diamond_axe",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1478,19 +1478,19 @@
     },
     {
       "helmet": {
-        "item": "DIAMOND_HELMET"
+        "item": "diamond_helmet"
       },
       "chestplate": {
-        "item": "DIAMOND_CHESTPLATE"
+        "item": "diamond_chestplate"
       },
       "leggings": {
-        "item": "DIAMOND_LEGGINGS"
+        "item": "diamond_leggings"
       },
       "boots": {
-        "item": "DIAMOND_BOOTS"
+        "item": "diamond_boots"
       },
       "weapon": {
-        "item": "DIAMOND_SWORD",
+        "item": "diamond_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1500,10 +1500,10 @@
     },
     {
       "helmet": {
-        "item": "DIAMOND_HELMET"
+        "item": "diamond_helmet"
       },
       "chestplate": {
-        "item": "DIAMOND_CHESTPLATE",
+        "item": "diamond_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1511,13 +1511,13 @@
         ]
       },
       "leggings": {
-        "item": "DIAMOND_LEGGINGS"
+        "item": "diamond_leggings"
       },
       "boots": {
-        "item": "DIAMOND_BOOTS"
+        "item": "diamond_boots"
       },
       "weapon": {
-        "item": "DIAMOND_SWORD",
+        "item": "diamond_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1527,10 +1527,10 @@
     },
     {
       "helmet": {
-        "item": "DIAMOND_HELMET"
+        "item": "diamond_helmet"
       },
       "chestplate": {
-        "item": "DIAMOND_CHESTPLATE",
+        "item": "diamond_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1538,7 +1538,7 @@
         ]
       },
       "leggings": {
-        "item": "DIAMOND_LEGGINGS",
+        "item": "diamond_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1546,10 +1546,10 @@
         ]
       },
       "boots": {
-        "item": "DIAMOND_BOOTS"
+        "item": "diamond_boots"
       },
       "weapon": {
-        "item": "DIAMOND_SWORD",
+        "item": "diamond_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1559,10 +1559,10 @@
     },
     {
       "helmet": {
-        "item": "DIAMOND_HELMET"
+        "item": "diamond_helmet"
       },
       "chestplate": {
-        "item": "DIAMOND_CHESTPLATE",
+        "item": "diamond_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1570,7 +1570,7 @@
         ]
       },
       "leggings": {
-        "item": "DIAMOND_LEGGINGS",
+        "item": "diamond_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1578,7 +1578,7 @@
         ]
       },
       "boots": {
-        "item": "DIAMOND_BOOTS",
+        "item": "diamond_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1586,7 +1586,7 @@
         ]
       },
       "weapon": {
-        "item": "DIAMOND_SWORD",
+        "item": "diamond_sword",
         "enchants": [
           {
             "enchantment": "sharpness"
@@ -1596,7 +1596,7 @@
     },
     {
       "helmet": {
-        "item": "DIAMOND_HELMET",
+        "item": "diamond_helmet",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1604,7 +1604,7 @@
         ]
       },
       "chestplate": {
-        "item": "DIAMOND_CHESTPLATE",
+        "item": "diamond_chestplate",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1612,7 +1612,7 @@
         ]
       },
       "leggings": {
-        "item": "DIAMOND_LEGGINGS",
+        "item": "diamond_leggings",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1620,7 +1620,7 @@
         ]
       },
       "boots": {
-        "item": "DIAMOND_BOOTS",
+        "item": "diamond_boots",
         "enchants": [
           {
             "enchantment": "protection"
@@ -1628,7 +1628,7 @@
         ]
       },
       "weapon": {
-        "item": "DIAMOND_SWORD",
+        "item": "diamond_sword",
         "enchants": [
           {
             "enchantment": "sharpness"

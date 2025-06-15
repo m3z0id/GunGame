@@ -2,17 +2,17 @@
   "showTop": 5,
   "mapChangeInterval": 10,
   "lossPercentage": 20,
-  "worlds": ["world1", "world2"],
+  "worlds": ["world"],
   "shopInventoryItem": {
     "name": "&aObchod",
-    "item": "EMERALD",
+    "item": "emerald",
     "slot": 8
   },
   "soundOnBuy": {
-    "sound": "ENTITY_GENERIC_DRINK"
+    "sound": "entity.generic.drink"
   },
   "soundOnLevelup": {
-    "sound": "ENTITY_PLAYER_LEVELUP"
+    "sound": "entity.player.levelup"
   },
   "shop": {
     "size": 27,
@@ -21,11 +21,11 @@
       {
         "name": "&cStrength",
         "cost": 80,
-        "item": "RED_DYE",
+        "item": "red_dye",
         "slot": 11,
         "effects": [
           {
-            "effect": "INCREASE_DAMAGE",
+            "effect": "strength",
             "level": 0,
             "duration": 20
           }
@@ -34,16 +34,16 @@
       {
         "name": "&bSpeed &fa &eJump Boost",
         "cost": 15,
-        "item": "RABBIT_FOOT",
+        "item": "rabbit_foot",
         "slot": 15,
         "effects": [
           {
-            "effect": "SPEED",
+            "effect": "speed",
             "level": 0,
             "duration": 15
           },
           {
-            "effect": "JUMP",
+            "effect": "jump_boost",
             "level": 0,
             "duration": 15
           }
