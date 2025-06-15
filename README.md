@@ -1,6 +1,6 @@
 # GunGame
 
-A Minecraft GunGame plugin for Spigot 1.18.2+, featuring level-based kits, a configurable shop, and player statistics tracking.
+A Minecraft GunGame plugin for Paper, featuring level-based kits, a configurable shop, and player statistics tracking.
 
 ## Features
 
@@ -14,7 +14,7 @@ A Minecraft GunGame plugin for Spigot 1.18.2+, featuring level-based kits, a con
 
 ## Requirements
 
-- Minecraft 1.18.2+ Paper server
+- Minecraft Paper server
 - [Vault](https://dev.bukkit.org/projects/vault)
 - [Essentials](https://essentialsx.net/)
 - [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)

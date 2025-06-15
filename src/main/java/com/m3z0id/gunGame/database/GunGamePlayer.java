@@ -63,9 +63,9 @@ public class GunGamePlayer {
         addLevels(1);
 
         player.addPotionEffect(PotionEffectType.REGENERATION.createEffect(15, 5));
-        player.removePotionEffect(PotionEffectType.SLOW);
+        player.removePotionEffect(PotionEffectType.SLOWNESS);
         if(getCurrentLevel() >= 55){
-            player.addPotionEffect(PotionEffectType.SLOW.createEffect(Integer.MAX_VALUE, 0));
+            player.addPotionEffect(PotionEffectType.SLOWNESS.createEffect(Integer.MAX_VALUE, 0));
         }
     }
     public void addLevels(int amount){
@@ -81,7 +81,7 @@ public class GunGamePlayer {
     }
 
     public void applyKit(LevelEntry entry){
-        player.removePotionEffect(PotionEffectType.SLOW);
+        player.removePotionEffect(PotionEffectType.SLOWNESS);
         player.getInventory().clear();
         player.getInventory().setArmorContents(entry.getArmor());
         if(entry.getInventory() != null && !Arrays.asList(entry.getInventory()).isEmpty()){

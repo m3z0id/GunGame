@@ -1,13 +1,13 @@
 package com.m3z0id.gunGame.config.subclasses.config;
 
-import org.bukkit.Material;
+import org.bukkit.inventory.ItemType;
 
 import java.util.List;
 
 public class ShopItem {
     String name;
     int cost;
-    Material item;
+    ItemType item;
     int slot;
     List<Effect> effects;
 
@@ -21,7 +21,7 @@ public class ShopItem {
     public int getCost() {
         return cost;
     }
-    public Material getItem() {
+    public ItemType getItem() {
         return item;
     }
     public int getSlot() {

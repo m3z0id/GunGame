@@ -1,13 +1,14 @@
 plugins {
-    `java-library`
+    id("java")
+    id("io.papermc.paperweight.userdev") version "2.0.0-beta.17"
 }
 
 group = "com.m3z0id.gunGame"
-version = "1.0.1"
-description = "A GunGame minigame plugin for Paper 1.18.2+"
+version = "1.0.2"
+description = "A GunGame minigame plugin for Paper 1.19+"
 
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(17)
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
 }
 
 repositories {
@@ -30,15 +31,17 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
     implementation("com.google.code.gson:gson:2.13.1")
-    implementation("me.clip:placeholderapi:2.11.6")
-    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
+    compileOnly("me.clip:placeholderapi:2.11.6")
+    compileOnly("com.github.MilkBowl:VaultAPI:1.7") {
+        exclude(group = "org.bukkit", module = "bukkit")
+    }
+    paperweight.paperDevBundle("1.21.5-R0.1-SNAPSHOT")
 }
 
 tasks {
     compileJava {
-        options.release = 17
+        options.release = 21
     }
 
     processResources {
@@ -52,4 +55,8 @@ tasks {
         inputs.properties(props)
         filesMatching("paper-plugin.yml") { expand(props) }
     }
+}
+
+tasks.assemble {
+    paperweight.reobfArtifactConfiguration = io.papermc.paperweight.userdev.ReobfArtifactConfiguration.MOJANG_PRODUCTION
 }

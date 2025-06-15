@@ -1,16 +1,17 @@
 package com.m3z0id.gunGame.config.subclasses.level;
 
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
-import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ItemType;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 
 public class ItemEntry {
-    private Material item;
+    private ItemType item;
     private String displayName;
     private Boolean unbreakable;
     private Integer amount;
@@ -20,11 +21,11 @@ public class ItemEntry {
 
     private Component getDisplayName() {
         if(displayName == null) {
-            ItemStack itemStack = new ItemStack(item);
+            ItemStack itemStack = item.createItemStack();
             ItemMeta itemMeta = itemStack.getItemMeta();
             return itemMeta.displayName();
         }
-        return LegacyComponentSerializer.legacySection().deserialize(displayName);
+        return LegacyComponentSerializer.legacyAmpersand().deserialize(displayName).decoration(TextDecoration.ITALIC, false);
     }
     private int getAmount() {
         if(amount == null || amount == 0) return 1;
@@ -45,7 +46,7 @@ public class ItemEntry {
     }
     public ItemStack asItemStack() {
         if(item == null) return null;
-        ItemStack itemStack = new ItemStack(item, getAmount());
+        ItemStack itemStack = new ItemStack(item.asMaterial(), getAmount());
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.displayName(getDisplayName());
         if(getEnchants() != null && !getEnchants().isEmpty()) {

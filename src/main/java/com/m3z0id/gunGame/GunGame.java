@@ -6,6 +6,7 @@ import com.m3z0id.gunGame.database.Database;
 import com.m3z0id.gunGame.events.*;
 import com.m3z0id.gunGame.papi.*;
 import com.m3z0id.gunGame.shop.ShopFunctionality;
+import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -63,10 +64,12 @@ public final class GunGame extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new OnInventoryMove(), this);
         Bukkit.getPluginManager().registerEvents(new ShopFunctionality(), this);
 
-        getCommand("gungame").setExecutor(new MainCommand());
-        getCommand("gungame").setTabCompleter(new MainCommand());
+        this.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, commands -> {
+            commands.registrar().register("gungame", new MainCommand());
+        });
     }
     public void load(){
+        getDataFolder().mkdirs();
         database = Database.get();
         itemLevels = Levels.load();
         config = Config.loadConfig();
@@ -83,7 +86,7 @@ public final class GunGame extends JavaPlugin {
                 }, 0, (long) config.getMapChangeInterval()*20*60);
             }
         } else if(!loadedWorlds.isEmpty()) {
-            currentWorld = loadedWorlds.get(loadedWorlds.size()-1);
+            currentWorld = loadedWorlds.getLast();
         }
 
         if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {

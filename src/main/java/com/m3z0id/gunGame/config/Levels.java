@@ -5,12 +5,12 @@ import com.google.gson.GsonBuilder;
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.config.serializers.EnchantmentSerializer;
 import com.m3z0id.gunGame.config.serializers.ItemFlagSerializer;
-import com.m3z0id.gunGame.config.serializers.MaterialSerializer;
+import com.m3z0id.gunGame.config.serializers.ItemTypeSerializer;
 import com.m3z0id.gunGame.config.subclasses.LevelEntry;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.ItemType;
 
 import java.io.File;
 import java.io.FileReader;
@@ -28,7 +28,7 @@ public class Levels {
 
     public static Levels load() {
         Gson gson = new GsonBuilder()
-                .registerTypeAdapter(Material.class, new MaterialSerializer())
+                .registerTypeAdapter(ItemType.class, new ItemTypeSerializer())
                 .registerTypeAdapter(Enchantment.class, new EnchantmentSerializer())
                 .registerTypeAdapter(ItemFlag.class, new ItemFlagSerializer())
                 .create();

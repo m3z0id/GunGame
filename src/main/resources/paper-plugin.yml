@@ -1,14 +1,23 @@
 name: GunGame
-version: '1.0.1'
+version: '1.0.2'
 main: com.m3z0id.gunGame.GunGame
-api-version: '1.18.2'
+api-version: '1.21.4'
 authors: [ M3z0id ]
-depend: [Vault, Essentials, PlacehodlerAPI]
 
-commands:
-  gungame:
-    usage: /<command> [reset]/[stats] <player> [set/add] <number> [kills/deaths/levels]
-    permission: gungame.admin
+dependencies:
+  server:
+    Vault:
+      load: AFTER
+      required: true
+      join-classpath: true
+    Essentials:
+      load: AFTER
+      required: true
+      join-classpath: true
+    PlaceholderAPI:
+      load: AFTER
+      required: false
+      join-classpath: true
 
 permissions:
   gungame.admin:

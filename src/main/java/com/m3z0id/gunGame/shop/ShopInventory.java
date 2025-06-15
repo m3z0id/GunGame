@@ -16,7 +16,7 @@ public class ShopInventory implements InventoryHolder {
     public List<CustomItem> items = new ArrayList<>();
     @Override
     public @NotNull Inventory getInventory() {
-        Inventory inventory = Bukkit.createInventory(this, InventoryType.CHEST, LegacyComponentSerializer.legacySection().deserialize(GunGame.config.getShop().getTitle()));
+        Inventory inventory = Bukkit.createInventory(this, InventoryType.CHEST, LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.config.getShop().getTitle()));
         for(ShopItem item : GunGame.config.getShop().getItems()){
             CustomItem customItem = new CustomItem(item, 1);
             items.add(customItem);

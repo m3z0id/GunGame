@@ -3,7 +3,7 @@ package com.m3z0id.gunGame.shop;
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.config.subclasses.config.Effect;
 import com.m3z0id.gunGame.config.subclasses.config.ShopItem;
-import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -17,10 +17,12 @@ public class CustomItem extends ItemStack {
     int price;
     int slot;
     public CustomItem(ShopItem shopItem, int amount) {
-        super(shopItem.getItem(), amount);
+        super(shopItem.getItem().createItemStack());
+        this.setAmount(amount);
+
         ItemMeta meta = this.getItemMeta();
-        meta.displayName(LegacyComponentSerializer.legacySection().deserialize(shopItem.getName()));
-        meta.lore(List.of(Component.newline(), LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getPriceLore().replaceAll("%price%", String.valueOf(shopItem.getCost())))));
+        meta.displayName(LegacyComponentSerializer.legacyAmpersand().deserialize(shopItem.getName()).decoration(TextDecoration.ITALIC, false));
+        meta.lore(List.of(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getPriceLore().replaceAll("%price%", String.valueOf(shopItem.getCost()))).decoration(TextDecoration.ITALIC, false)));
         this.setItemMeta(meta);
         for(Effect effect : shopItem.getEffects()) {
             effects.add(effect.getEffect().createEffect(effect.getDuration()*20, effect.getLevel()));
@@ -42,8 +44,5 @@ public class CustomItem extends ItemStack {
     }
     public boolean equalsItemStack(CustomItem customItem) {
         return customItem.asItemStack().equals(asItemStack());
-    }
-    public boolean equalsItemStack(ItemStack itemStack) {
-        return itemStack.equals(asItemStack());
     }
 }

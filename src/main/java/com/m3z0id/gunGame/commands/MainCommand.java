@@ -2,85 +2,81 @@ package com.m3z0id.gunGame.commands;
 
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.database.GunGamePlayer;
+import io.papermc.paper.command.brigadier.BasicCommand;
+import io.papermc.paper.command.brigadier.CommandSourceStack;
+import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainCommand implements CommandExecutor, TabCompleter {
+public class MainCommand implements BasicCommand {
     @Override
-    public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
+    public void execute(CommandSourceStack commandSourceStack, String[] args) {
         if(args.length < 1){
-            commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
-            return true;
+            commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
+            return;
         }
-        if(args[0].equalsIgnoreCase("stats")){
+        if(args[0].equalsIgnoreCase("stats")) {
             if(args.length != 5){
-                commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
-                return true;
+                commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
+                return;
             }
             Player player = (Player) Bukkit.getOfflinePlayer(args[1]);
             String method = args[2];
+
             int amount;
             try {
                 amount = Integer.parseInt(args[3]);
             } catch (NumberFormatException e) {
-                commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
-                return true;
+                commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
+                return;
             }
             amount = Math.abs(amount);
             String field = args[4];
-
             if(method.equalsIgnoreCase("add")){
                 if(field.equalsIgnoreCase("kills")){
                     GunGamePlayer.fromPlayer(player).addKills(amount);
-                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
-                    return true;
+                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+                    return;
                 }
                 else if(field.equalsIgnoreCase("deaths")){
                     GunGamePlayer.fromPlayer(player).addDeaths(amount);
-                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
-                    return true;
+                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+                    return;
                 }
                 else if(field.equalsIgnoreCase("levels")){
                     GunGamePlayer.fromPlayer(player).addLevels(amount);
-                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
-                    return true;
+                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+                    return;
                 }
                 else {
-                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
-                    return true;
+                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
+                    return;
                 }
             }
             if(method.equalsIgnoreCase("set")){
                 if(field.equalsIgnoreCase("kills")){
                     GunGamePlayer.fromPlayer(player).setKills(amount);
-                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
-                    return true;
+                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
                 }
                 else if(field.equalsIgnoreCase("deaths")){
                     GunGamePlayer.fromPlayer(player).setDeaths(amount);
-                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
-                    return true;
+                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
                 }
                 else if(field.equalsIgnoreCase("levels")){
                     if(GunGame.levels == null) GunGame.levels = new HashMap<>();
                     GunGamePlayer.fromPlayer(player).setLevels(Math.max(amount, 1));
-                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
-                    return true;
+                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
                 }
                 else {
-                    commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
-                    return true;
+                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
                 }
             }
         }
@@ -92,29 +88,28 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 GunGamePlayer.fromPlayer(p).setLevels(1);
             }
 
-            commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()));
-            return true;
+            commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
         } else if(args[0].equalsIgnoreCase("reload")){
             GunGame.instance.load();
-            commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() +  GunGame.lang.getSuccessMessage()));
-            return true;
+            commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() +  GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
         }
         else {
-            commandSender.sendMessage(LegacyComponentSerializer.legacySection().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()));
-            return true;
+            commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
         }
-        return true;
     }
 
     @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
-        if(args.length == 1){
+    public Collection<String> suggest(CommandSourceStack commandSourceStack, String[] args) {
+        if(args.length == 0) {
+            return List.of("reset", "stats", "reload");
+        } else if(args.length == 1) {
+
             List<String> list = new ArrayList<>();
             if("reset".startsWith(args[0])){
                 list.add("reset");
             }
             if("stats".startsWith(args[0])){
-               list.add("stats");
+                list.add("stats");
             }
             if("reload".startsWith(args[0])){
                 list.add("reload");
@@ -122,7 +117,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             return list;
         }
         else if(args.length == 2){
-            return null;
+            return Bukkit.getOnlinePlayers().stream().map(Player::getName).toList();
         }
         else if(args.length == 3){
             List<String> list = new ArrayList<>();
@@ -161,6 +156,16 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             }
             return list;
         }
-        return null;
+        return Bukkit.getOnlinePlayers().stream().map(Player::getName).toList();
+    }
+
+    @Override
+    public boolean canUse(CommandSender sender) {
+        return sender.hasPermission(permission()) || sender.isOp() || sender instanceof ConsoleCommandSender;
+    }
+
+    @Override
+    public String permission() {
+        return "gungame.admin";
     }
 }

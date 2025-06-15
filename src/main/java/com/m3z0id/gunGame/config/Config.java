@@ -3,15 +3,15 @@ package com.m3z0id.gunGame.config;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.m3z0id.gunGame.GunGame;
-import com.m3z0id.gunGame.config.serializers.MaterialSerializer;
+import com.m3z0id.gunGame.config.serializers.ItemTypeSerializer;
 import com.m3z0id.gunGame.config.serializers.PotionEffectTypeSerializer;
 import com.m3z0id.gunGame.config.serializers.SoundSerializer;
 import com.m3z0id.gunGame.config.subclasses.config.Shop;
 import com.m3z0id.gunGame.config.subclasses.config.ShopInventoryItem;
 import com.m3z0id.gunGame.config.subclasses.config.SoundEntry;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.inventory.ItemType;
 import org.bukkit.potion.PotionEffectType;
 
 import java.io.*;
@@ -62,7 +62,7 @@ public class Config {
         }
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(PotionEffectType.class, new PotionEffectTypeSerializer())
-                .registerTypeAdapter(Material.class, new MaterialSerializer())
+                .registerTypeAdapter(ItemType.class, new ItemTypeSerializer())
                 .registerTypeAdapter(Sound.class, new SoundSerializer())
                 .create();
 

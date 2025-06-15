@@ -18,12 +18,12 @@ public class Stats extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getAuthor() {
-        return String.join(", ", GunGame.instance.getDescription().getAuthors());
+        return "M3z0id";
     }
 
     @Override
     public @NotNull String getVersion() {
-        return GunGame.instance.getDescription().getVersion();
+        return "1.0";
     }
 
     @Override
