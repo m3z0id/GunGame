@@ -55,6 +55,10 @@ tasks {
         inputs.properties(props)
         filesMatching("paper-plugin.yml") { expand(props) }
     }
+
+    build {
+        dependsOn(reobfJar)
+    }
 }
 
 tasks.assemble {
