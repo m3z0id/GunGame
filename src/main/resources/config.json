@@ -4,7 +4,7 @@
   "lossPercentage": 20,
   "worlds": ["world"],
   "shopInventoryItem": {
-    "name": "&aObchod",
+    "name": "<green>Shop",
     "item": "emerald",
     "slot": 8
   },
@@ -16,10 +16,10 @@
   },
   "shop": {
     "size": 27,
-    "title": "&cObchod",
+    "title": "<yellow>Shop",
     "items": [
       {
-        "name": "&cStrength",
+        "name": "<red>Strength",
         "cost": 80,
         "item": "red_dye",
         "slot": 11,
@@ -32,7 +32,7 @@
         ]
       },
       {
-        "name": "&bSpeed &fa &eJump Boost",
+        "name": "<aqua>Speed <white>and <yellow>Jump Boost",
         "cost": 15,
         "item": "rabbit_foot",
         "slot": 15,

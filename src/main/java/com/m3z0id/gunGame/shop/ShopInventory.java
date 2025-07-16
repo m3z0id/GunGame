@@ -2,7 +2,7 @@ package com.m3z0id.gunGame.shop;
 
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.config.subclasses.config.ShopItem;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
@@ -16,7 +16,7 @@ public class ShopInventory implements InventoryHolder {
     public List<CustomItem> items = new ArrayList<>();
     @Override
     public @NotNull Inventory getInventory() {
-        Inventory inventory = Bukkit.createInventory(this, InventoryType.CHEST, LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.config.getShop().getTitle()));
+        Inventory inventory = Bukkit.createInventory(this, InventoryType.CHEST, MiniMessage.miniMessage().deserialize(GunGame.config.getShop().getTitle()));
         for(ShopItem item : GunGame.config.getShop().getItems()){
             CustomItem customItem = new CustomItem(item, 1);
             items.add(customItem);

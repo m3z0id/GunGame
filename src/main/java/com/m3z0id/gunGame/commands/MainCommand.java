@@ -5,7 +5,7 @@ import com.m3z0id.gunGame.database.GunGamePlayer;
 import io.papermc.paper.command.brigadier.BasicCommand;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import net.kyori.adventure.text.format.TextDecoration;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
@@ -20,12 +20,12 @@ public class MainCommand implements BasicCommand {
     @Override
     public void execute(CommandSourceStack commandSourceStack, String[] args) {
         if(args.length < 1){
-            commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
+            commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
             return;
         }
         if(args[0].equalsIgnoreCase("stats")) {
             if(args.length != 5){
-                commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
+                commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
                 return;
             }
             Player player = (Player) Bukkit.getOfflinePlayer(args[1]);
@@ -35,7 +35,7 @@ public class MainCommand implements BasicCommand {
             try {
                 amount = Integer.parseInt(args[3]);
             } catch (NumberFormatException e) {
-                commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
+                commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
                 return;
             }
             amount = Math.abs(amount);
@@ -43,40 +43,40 @@ public class MainCommand implements BasicCommand {
             if(method.equalsIgnoreCase("add")){
                 if(field.equalsIgnoreCase("kills")){
                     GunGamePlayer.fromPlayer(player).addKills(amount);
-                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+                    commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
                     return;
                 }
                 else if(field.equalsIgnoreCase("deaths")){
                     GunGamePlayer.fromPlayer(player).addDeaths(amount);
-                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+                    commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
                     return;
                 }
                 else if(field.equalsIgnoreCase("levels")){
                     GunGamePlayer.fromPlayer(player).addLevels(amount);
-                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+                    commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
                     return;
                 }
                 else {
-                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
+                    commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
                     return;
                 }
             }
             if(method.equalsIgnoreCase("set")){
                 if(field.equalsIgnoreCase("kills")){
                     GunGamePlayer.fromPlayer(player).setKills(amount);
-                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+                    commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
                 }
                 else if(field.equalsIgnoreCase("deaths")){
                     GunGamePlayer.fromPlayer(player).setDeaths(amount);
-                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+                    commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
                 }
                 else if(field.equalsIgnoreCase("levels")){
                     if(GunGame.levels == null) GunGame.levels = new HashMap<>();
                     GunGamePlayer.fromPlayer(player).setLevels(Math.max(amount, 1));
-                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+                    commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
                 }
                 else {
-                    commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
+                    commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
                 }
             }
         }
@@ -88,13 +88,13 @@ public class MainCommand implements BasicCommand {
                 GunGamePlayer.fromPlayer(p).setLevels(1);
             }
 
-            commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+            commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
         } else if(args[0].equalsIgnoreCase("reload")){
             GunGame.instance.load();
-            commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() +  GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
+            commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() +  GunGame.lang.getSuccessMessage()).decoration(TextDecoration.ITALIC, false));
         }
         else {
-            commandSourceStack.getSender().sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
+            commandSourceStack.getSender().sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInvalidSubcommand()).decoration(TextDecoration.ITALIC, false));
         }
     }
 

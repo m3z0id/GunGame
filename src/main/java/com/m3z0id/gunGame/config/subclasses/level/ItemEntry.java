@@ -2,7 +2,7 @@ package com.m3z0id.gunGame.config.subclasses.level;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextDecoration;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ItemType;
@@ -25,7 +25,7 @@ public class ItemEntry {
             ItemMeta itemMeta = itemStack.getItemMeta();
             return itemMeta.displayName();
         }
-        return LegacyComponentSerializer.legacyAmpersand().deserialize(displayName).decoration(TextDecoration.ITALIC, false);
+        return MiniMessage.miniMessage().deserialize(displayName).decoration(TextDecoration.ITALIC, false);
     }
     private int getAmount() {
         if(amount == null || amount == 0) return 1;

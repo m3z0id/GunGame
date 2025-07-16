@@ -2,7 +2,7 @@ package com.m3z0id.gunGame.shop;
 
 import com.m3z0id.gunGame.GunGame;
 import net.kyori.adventure.text.format.TextDecoration;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -23,7 +23,7 @@ public class ShopFunctionality implements Listener {
         for(CustomItem item : holder.items) {;
             if(currentItem.toString().equals(item.asItemStack().toString())) {
                 if(GunGame.instance.economy.getBalance(player) < item.getPrice()){
-                    player.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInsufficientFundsMessage()).decoration(TextDecoration.ITALIC, false));
+                    player.sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getInsufficientFundsMessage()).decoration(TextDecoration.ITALIC, false));
                     player.closeInventory();
 
                 } else {
@@ -32,7 +32,7 @@ public class ShopFunctionality implements Listener {
                         player.playSound(player.getLocation(), GunGame.config.getSoundOnBuy().getSound(), GunGame.config.getSoundOnBuy().getVolume(), GunGame.config.getSoundOnBuy().getPitch());
                     }
                     player.addPotionEffects(item.getEffects());
-                    player.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessfulPurchaseMessage()).decoration(TextDecoration.ITALIC, false));
+                    player.sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getSuccessfulPurchaseMessage()).decoration(TextDecoration.ITALIC, false));
                     player.closeInventory();
                 }
                 break;

@@ -3,7 +3,7 @@ package com.m3z0id.gunGame.events;
 import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.database.GunGamePlayer;
 import net.kyori.adventure.text.format.TextDecoration;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -23,7 +23,7 @@ public class OnKill implements Listener {
         p.teleport(GunGame.currentWorld.getSpawnLocation());
 
         if(p.getKiller() == null) {
-            p.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getWaterDeathMessage()).decoration(TextDecoration.ITALIC, false));
+            p.sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getWaterDeathMessage()).decoration(TextDecoration.ITALIC, false));
             return;
         }
 
@@ -36,8 +36,8 @@ public class OnKill implements Listener {
             killer.playSound(killer.getLocation(), GunGame.config.getSoundOnLevelup().getSound(), GunGame.config.getSoundOnLevelup().getVolume(), GunGame.config.getSoundOnLevelup().getPitch());
         }
 
-        p.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getDeathMessage().replaceAll("%killerName%", killer.getName()).replaceAll("%level%", String.valueOf(killerPrevLevel))).decoration(TextDecoration.ITALIC, false));
-        killer.sendMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getKillMessage().replaceAll("%deadName%", p.getName()).replaceAll("%level%", String.valueOf(deadPrevLevel))).decoration(TextDecoration.ITALIC, false));
+        p.sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getDeathMessage().replaceAll("%killerName%", killer.getName()).replaceAll("%level%", String.valueOf(killerPrevLevel))).decoration(TextDecoration.ITALIC, false));
+        killer.sendMessage(MiniMessage.miniMessage().deserialize(GunGame.lang.getServerPrefix() + GunGame.lang.getKillMessage().replaceAll("%deadName%", p.getName()).replaceAll("%level%", String.valueOf(deadPrevLevel))).decoration(TextDecoration.ITALIC, false));
 
         p.teleport(GunGame.currentWorld.getSpawnLocation());
         p.getActivePotionEffects().forEach(potionEffect -> {

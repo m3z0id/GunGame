@@ -4,7 +4,7 @@ import com.m3z0id.gunGame.GunGame;
 import com.m3z0id.gunGame.config.subclasses.config.Effect;
 import com.m3z0id.gunGame.config.subclasses.config.ShopItem;
 import net.kyori.adventure.text.format.TextDecoration;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
@@ -21,8 +21,8 @@ public class CustomItem extends ItemStack {
         this.setAmount(amount);
 
         ItemMeta meta = this.getItemMeta();
-        meta.displayName(LegacyComponentSerializer.legacyAmpersand().deserialize(shopItem.getName()).decoration(TextDecoration.ITALIC, false));
-        meta.lore(List.of(LegacyComponentSerializer.legacyAmpersand().deserialize(GunGame.lang.getPriceLore().replaceAll("%price%", String.valueOf(shopItem.getCost()))).decoration(TextDecoration.ITALIC, false)));
+        meta.displayName(MiniMessage.miniMessage().deserialize(shopItem.getName()).decoration(TextDecoration.ITALIC, false));
+        meta.lore(List.of(MiniMessage.miniMessage().deserialize(GunGame.lang.getPriceLore().replaceAll("%price%", String.valueOf(shopItem.getCost()))).decoration(TextDecoration.ITALIC, false)));
         this.setItemMeta(meta);
         for(Effect effect : shopItem.getEffects()) {
             effects.add(effect.getEffect().createEffect(effect.getDuration()*20, effect.getLevel()));
@@ -41,8 +41,5 @@ public class CustomItem extends ItemStack {
     }
     public ItemStack asItemStack() {
         return this;
-    }
-    public boolean equalsItemStack(CustomItem customItem) {
-        return customItem.asItemStack().equals(asItemStack());
     }
 }

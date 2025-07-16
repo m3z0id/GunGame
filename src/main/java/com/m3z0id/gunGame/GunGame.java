@@ -45,6 +45,7 @@ public final class GunGame extends JavaPlugin {
         if(!setupEconomy()) {
             Bukkit.getLogger().warning("Disabling due to economy error.");
             Bukkit.getPluginManager().disablePlugin(this);
+            return;
         }
 
         Bukkit.getScheduler().runTaskTimer(this, () -> {
