@@ -4,8 +4,8 @@ plugins {
 }
 
 group = "com.m3z0id.gunGame"
-version = "1.0.2"
-description = "A GunGame minigame plugin for Paper 1.19+"
+version = "1.0.3"
+description = "A GunGame minigame plugin for Paper 1.18+"
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -36,7 +36,7 @@ dependencies {
     compileOnly("com.github.MilkBowl:VaultAPI:1.7") {
         exclude(group = "org.bukkit", module = "bukkit")
     }
-    paperweight.paperDevBundle("1.21.5-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.21.7-R0.1-SNAPSHOT")
 }
 
 tasks {

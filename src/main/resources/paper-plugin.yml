@@ -1,7 +1,7 @@
 name: GunGame
-version: '1.0.2'
+version: '1.0.3'
 main: com.m3z0id.gunGame.GunGame
-api-version: '1.21.4'
+api-version: '1.21.7'
 authors: [ M3z0id ]
 
 dependencies:
